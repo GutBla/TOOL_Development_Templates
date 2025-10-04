@@ -1,0 +1,3315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLANTILLAS</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/Icon_templates.png">
+    
+    <!-- Fuentes y estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Notificación -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notification-text">Operación completada con éxito</span>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="hero-container">
+            <h1>PLANTILLAS</h1>
+            <p class="hero-description">Plantillas profesionales para documentar ceremonias y artefactos usados en el desarrollo de software.</p>
+        </div>
+    </header>
+    
+    <!-- Sección principal con carrusel -->
+    <main class="main-content">
+        <section class="hero">
+            <h2>Elige las plantillas a usar</h2>
+            
+            <div class="carousel-container">
+                <button class="carousel-btn prev">
+                    <span class="material-icons">chevron_left</span>
+                </button>
+                <button class="carousel-btn next">
+                    <span class="material-icons">chevron_right</span>
+                </button>
+                
+                <div class="carousel">
+                    <!-- Tarjetas de plantillas organizadas por categorías -->
+                    
+                    <!-- Ceremonias Ágiles -->
+                    <div class="card" onclick="showTemplate('daily')">
+                        <div class="card-image" style="background-image: url('assets/img/Daily Stand-up.png');">
+                            <h3 class="card-title">Daily Stand-up</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--daily-standup);"></div>
+                        <div class="card-icon" style="color: var(--daily-standup);">
+                            <span class="material-icons">groups</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Reunión diaria para sincronizar al equipo, compartir progresos y identificar obstáculos.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('daily')">Ver plantilla</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card" onclick="showTemplate('planning')">
+                        <div class="card-image" style="background-image: url('assets/img/Sprint Planning.png');">
+                            <h3 class="card-title">Sprint Planning</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--sprint-planning);"></div>
+                        <div class="card-icon" style="color: var(--sprint-planning);">
+                            <span class="material-icons">schedule</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Planificación del trabajo para el próximo sprint, definiendo objetivos y tareas.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('planning')">Ver plantilla</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card" onclick="showTemplate('review')">
+                        <div class="card-image" style="background-image: url('assets/img/Sprint Review.png');">
+                            <h3 class="card-title">Sprint Review</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--sprint-review);"></div>
+                        <div class="card-icon" style="color: var(--sprint-review);">
+                            <span class="material-icons">search</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Revisión del trabajo completado en el sprint y recopilación de feedback.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('review')">Ver plantilla</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card" onclick="showTemplate('retro')">
+                        <div class="card-image" style="background-image: url('assets/img/Sprint Retrospective.png');">
+                            <h3 class="card-title">Sprint Retrospective</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--sprint-retro);"></div>
+                        <div class="card-icon" style="color: var(--sprint-retro);">
+                            <span class="material-icons">autorenew</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Reflexión sobre el proceso de trabajo para identificar mejoras continuas.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('retro')">Ver plantilla</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Artefactos de Producto -->
+                    <div class="card" onclick="showTemplate('backlog')">
+                        <div class="card-image" style="background-image: url('assets/img/Product Backlog.png');">
+                            <h3 class="card-title">Product Backlog</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--product-backlog);"></div>
+                        <div class="card-icon" style="color: var(--product-backlog);">
+                            <span class="material-icons">list</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Lista priorizada de todas las funcionalidades, mejoras y correcciones del producto.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('backlog')">Ver plantilla</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card" onclick="showTemplate('sprintbacklog')">
+                        <div class="card-image" style="background-image: url('assets/img/Sprint Backlog.png');">
+                            <h3 class="card-title">Sprint Backlog</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--sprint-backlog);"></div>
+                        <div class="card-icon" style="color: var(--sprint-backlog);">
+                            <span class="material-icons">check_circle</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Tareas seleccionadas del Product Backlog para ser completadas en el sprint actual.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('sprintbacklog')">Ver plantilla</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card" onclick="showTemplate('roadmap')">
+                        <div class="card-image" style="background-image: url('assets/img/Roadmap.png');">
+                            <h3 class="card-title">Roadmap</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--roadmap);"></div>
+                        <div class="card-icon" style="color: var(--roadmap);">
+                            <span class="material-icons">map</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Planificación estratégica a largo plazo del producto y sus funcionalidades.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('roadmap')">Ver plantilla</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Herramientas de Desarrollo -->
+                    <div class="card" onclick="showTemplate('spikes')">
+                        <div class="card-image" style="background-image: url('assets/img/Spikes.png');">
+                            <h3 class="card-title">Spikes</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--spikes);"></div>
+                        <div class="card-icon" style="color: var(--spikes);">
+                            <span class="material-icons">science</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Investigaciones técnicas para reducir la incertidumbre en la estimación de tareas.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('spikes')">Ver plantilla</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card" onclick="showTemplate('demo')">
+                        <div class="card-image" style="background-image: url('assets/img/Demo.png');">
+                            <h3 class="card-title">Demo</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--demo);"></div>
+                        <div class="card-icon" style="color: var(--demo);">
+                            <span class="material-icons">play_arrow</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Presentación del trabajo completado a stakeholders y recolección de feedback.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('demo')">Ver plantilla</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Definiciones y Criterios -->
+                    <div class="card" onclick="showTemplate('definition-done')">
+                        <div class="card-image" style="background-image: url('assets/img/Definition of Done.png');">
+                            <h3 class="card-title">Definition of Done</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--definition-done);"></div>
+                        <div class="card-icon" style="color: var(--definition-done);">
+                            <span class="material-icons">flag</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Criterios claros que determinan cuándo una tarea está completamente terminada.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('definition-done')">Ver plantilla</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card" onclick="showTemplate('definition-ready')">
+                        <div class="card-image" style="background-image: url('assets/img/Definition of Ready.png');">
+                            <h3 class="card-title">Definition of Ready</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--definition-ready);"></div>
+                        <div class="card-icon" style="color: var(--definition-ready);">
+                            <span class="material-icons">flash_on</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Criterios que una tarea debe cumplir antes de ser incluida en un sprint.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('definition-ready')">Ver plantilla</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Gestión de Trabajo -->
+                    <div class="card" onclick="showTemplate('user-stories')">
+                        <div class="card-image" style="background-image: url('assets/img/User Stories.png');">
+                            <h3 class="card-title">User Stories</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--user-stories);"></div>
+                        <div class="card-icon" style="color: var(--user-stories);">
+                            <span class="material-icons">person</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Descripciones de funcionalidades desde la perspectiva del usuario final.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('user-stories')">Ver plantilla</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card" onclick="showTemplate('bug-log')">
+                        <div class="card-image" style="background-image: url('assets/img/Bug Log.png');">
+                            <h3 class="card-title">Bug Log</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--bug-log);"></div>
+                        <div class="card-icon" style="color: var(--bug-log);">
+                            <span class="material-icons">bug_report</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Seguimiento y gestión de errores, fallos y problemas del sistema.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('bug-log')">Ver plantilla</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card" onclick="showTemplate('task-list')">
+                        <div class="card-image" style="background-image: url('assets/img/Task List.png');">
+                            <h3 class="card-title">Task List</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--task-list);"></div>
+                        <div class="card-icon" style="color: var(--task-list);">
+                            <span class="material-icons">assignment</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Lista organizada de tareas pendientes, en progreso y completadas.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('task-list')">Ver plantilla</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Calidad -->
+                    <div class="card" onclick="showTemplate('test-case')">
+                        <div class="card-image" style="background-image: url('assets/img/Test Case.png');">
+                            <h3 class="card-title">Test Case</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--test-case);"></div>
+                        <div class="card-icon" style="color: var(--test-case);">
+                            <span class="material-icons">fact_check</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Procedimientos detallados para verificar el funcionamiento correcto del software.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('test-case')">Ver plantilla</a>
+                        </div>
+                    </div>
+
+                    <!-- Requirements Card -->
+                    <div class="card" onclick="showTemplate('requirements')">
+                        <div class="card-image" style="background-image: url('assets/img/Requirements.png');">
+                            <h3 class="card-title">Requirements</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--requirements);"></div>
+                        <div class="card-icon" style="color: var(--requirements);">
+                            <span class="material-icons">description</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Documentación y gestión de requisitos funcionales y no funcionales del sistema.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('requirements')">Ver plantilla</a>
+                        </div>
+                    </div>
+
+                    <!-- Traceability Matrix Card -->
+                    <div class="card" onclick="showTemplate('traceability')">
+                        <div class="card-image" style="background-image: url('assets/img/Traceability Matrix.png');">
+                            <h3 class="card-title">Traceability Matrix</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--traceability-matrix);"></div>
+                        <div class="card-icon" style="color: var(--traceability-matrix);">
+                            <span class="material-icons">account_tree</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Matriz de trazabilidad para relacionar requisitos con casos de prueba y historias de usuario.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('traceability')">Ver plantilla</a>
+                        </div>
+                    </div>
+
+                    <!-- Planning Poker Card -->
+                    <div class="card" onclick="showTemplate('planning-poker')">
+                        <div class="card-image" style="background-image: url('assets/img/Planning Poker.png');">
+                            <h3 class="card-title">Planning Poker</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--planning-poker);"></div>
+                        <div class="card-icon" style="color: var(--planning-poker);">
+                            <span class="material-icons">casino</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Sesión de estimación colaborativa para historias de usuario usando Planning Poker.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('planning-poker')">Ver plantilla</a>
+                        </div>
+                    </div>
+
+                    <!-- Change Request Card -->
+                    <div class="card" onclick="showTemplate('change-request')">
+                        <div class="card-image" style="background-image: url('assets/img/Change Request.png');">
+                            <h3 class="card-title">Change Request</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--change-request);"></div>
+                        <div class="card-icon" style="color: var(--change-request);">
+                            <span class="material-icons">swap_horiz</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Gestión formal de solicitudes de cambio en el proyecto o producto.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('change-request')">Ver plantilla</a>
+                        </div>
+                    </div>
+
+                    <!-- Architecture Decision Record Card -->
+                    <div class="card" onclick="showTemplate('architecture-decision')">
+                        <div class="card-image" style="background-image: url('assets/img/Architecture Decision Record.png');">
+                            <h3 class="card-title">Architecture Decision</h3>
+                        </div>
+                        <div class="card-background" style="background-color: var(--architecture-decision);"></div>
+                        <div class="card-icon" style="color: var(--architecture-decision);">
+                            <span class="material-icons">architecture</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-description">Registro de decisiones arquitectónicas importantes y su justificación.</p>
+                            <a href="#" class="card-button" onclick="showTemplate('architecture-decision')">Ver plantilla</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navegación del carrusel -->
+                <div class="carousel-nav">
+                    <div class="carousel-dot active"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Catálogo académico de plantillas para metodologías ágiles de desarrollo de software. Este material didáctico está diseñado para facilitar la documentación de ceremonias, artefactos y procesos en entornos de desarrollo ágil, promoviendo buenas prácticas y estandarización en la gestión de proyectos.</p>
+    </footer>
+    
+    <!-- Plantillas editables -->
+    <!-- Daily Stand-up Template -->
+    <div id="daily-template" class="template-container">
+        <div class="watermark">DAILY</div>
+        <div class="template-header" style="background: linear-gradient(135deg, var(--daily-standup) 0%, #ffd54f 100%);">
+            <div class="template-icon">
+                <i class="fas fa-comments"></i>
+            </div>
+            <div class="title-container">
+                <div class="template-title">Daily Stand-up</div>
+                <div class="template-subtitle">(Reunión Diaria)</div>
+            </div>
+        </div>
+        
+        <div class="template-content">
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Proyecto / Módulo</label>
+                    <input type="text" placeholder="Ingrese nombre del proyecto">
+                </div>
+                <div class="form-item">
+                    <label>Sprint</label>
+                    <input type="text" placeholder="Número de sprint">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Fecha de la reunión</label>
+                    <input type="text" class="flatpickr-input" placeholder="Seleccione fecha" data-input>
+                </div>
+                <div class="form-item">
+                    <label>Hora de la reunión</label>
+                    <input type="text" class="flatpickr-input" placeholder="Seleccione hora" data-input>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Scrum Master</label>
+                    <select id="daily-scrum-master">
+                        <option value="">Seleccione un Scrum Master</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label>Participantes</label>
+                    <textarea id="daily-participants" placeholder="• Miembro 1&#10;• Miembro 2&#10;• Miembro 3"></textarea>
+                    <div class="row-actions">
+                        <button class="icon-btn" onclick="generateScrumMasterOptions('daily-participants', 'daily-scrum-master')" data-tooltip="Generar Scrum Master">
+                            <i class="fas fa-users"></i>
+                        </button>
+                        <button class="icon-btn" onclick="addParticipantsToTable('daily-participants', 'daily-table')" data-tooltip="Añadir a tabla">
+                            <i class="fas fa-table"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="table-controls">
+                <h3 class="table-title">Reporte Diario por Miembro</h3>
+                <div>
+                    <button class="simple-add-row" onclick="addRow('daily-table')" data-tooltip="Añadir fila">+</button>
+                    <button class="simple-remove-row" onclick="removeRow('daily-table')" data-tooltip="Eliminar última fila">-</button>
+                </div>
+            </div>
+            
+            <table id="daily-table">
+                <thead>
+                    <tr>
+                        <th>Miembro</th>
+                        <th>¿Qué hiciste ayer?</th>
+                        <th>¿Qué harás hoy?</th>
+                        <th>¿Algún impedimento?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Observaciones Adicionales</label>
+                    <textarea placeholder="Ingrese notas adicionales"></textarea>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Evidencia de la Reunión</label>
+                    <div class="evidence-upload" id="daily-evidence-container">
+                        <input type="file" id="daily-evidence" accept="image/*" style="display: none;" onchange="previewImage(this, 'daily-preview', 'daily-evidence-container')">
+                        <label for="daily-evidence" class="evidence-label" id="daily-evidence-label"><i class="fas fa-upload"></i> Seleccionar captura de la reunión</label>
+                        <img id="daily-preview" class="evidence-preview" alt="Vista previa de la evidencia">
+                        <button class="remove-image-btn" onclick="removeImage('daily-evidence', 'daily-preview', 'daily-evidence-container', 'daily-evidence-label')"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Enlace de Grabación</label>
+                    <input type="text" placeholder="Pegar enlace de grabación de la reunión">
+                </div>
+            </div>
+        </div>
+        
+        <div class="btn-container">
+            <button class="btn btn-print" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir
+            </button>
+            <button class="btn btn-capture" onclick="captureTemplate('daily-template')">
+                <i class="fas fa-camera"></i> Capturar como imagen
+            </button>
+            <button class="btn btn-back" onclick="hideTemplates()">
+                <i class="fas fa-arrow-left"></i> Volver al inicio
+            </button>
+            <button class="btn btn-markdown" onclick="exportToMarkdown('daily-template')">
+                <i class="fab fa-markdown"></i> Exportar a Markdown
+            </button>
+        </div>
+    </div>
+
+    <!-- Sprint Planning Template -->
+    <div id="planning-template" class="template-container">
+        <div class="watermark">PLANNING</div>
+        <div class="template-header" style="background: linear-gradient(135deg, var(--sprint-planning) 0%, #ff7676 100%);">
+            <div class="template-icon">
+                <i class="fas fa-tasks"></i>
+            </div>
+            <div class="title-container">
+                <div class="template-title">Sprint Planning</div>
+                <div class="template-subtitle">(Planificación del Sprint)</div>
+            </div>
+        </div>
+        
+        <div class="template-content">
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Proyecto / Módulo</label>
+                    <input type="text" placeholder="Ingrese nombre del proyecto">
+                </div>
+                <div class="form-item">
+                    <label>Sprint</label>
+                    <input type="text" placeholder="Número de sprint">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Fecha de la reunión</label>
+                    <input type="text" class="flatpickr-input" placeholder="Seleccione fecha" data-input>
+                </div>
+                <div class="form-item">
+                    <label>Hora de la reunión</label>
+                    <input type="text" class="flatpickr-input" placeholder="Seleccione hora" data-input>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Scrum Master</label>
+                    <select id="planning-scrum-master">
+                        <option value="">Seleccione un Scrum Master</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label>Participantes</label>
+                    <textarea id="planning-participants" placeholder="• Miembro 1&#10;• Miembro 2&#10;• Miembro 3"></textarea>
+                    <div class="row-actions">
+                        <button class="icon-btn" onclick="generateScrumMasterOptions('planning-participants', 'planning-scrum-master')" data-tooltip="Generar Scrum Master">
+                            <i class="fas fa-users"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Objetivo del Sprint</label>
+                    <textarea placeholder="Definir el objetivo del sprint"></textarea>
+                </div>
+            </div>
+            
+            <div class="table-controls">
+                <h3 class="table-title">Elementos del Sprint Backlog</h3>
+                <div>
+                    <button class="simple-add-row" onclick="addRow('planning-table')" data-tooltip="Añadir fila">+</button>
+                    <button class="simple-remove-row" onclick="removeRow('planning-table')" data-tooltip="Eliminar última fila">-</button>
+                </div>
+            </div>
+            
+            <table id="planning-table">
+                <thead>
+                    <tr>
+                        <th>Historia de Usuario</th>
+                        <th>Estimación (puntos)</th>
+                        <th>Responsable</th>
+                        <th>Criterios de Aceptación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                        <td><input type="number" min="0" class="estimation-point" style="border: none; width: 100%; background: transparent; padding: 5px;" onchange="updateEstimationTotal()"></td>
+                        <td><input type="text" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                        <td><input type="number" min="0" class="estimation-point" style="border: none; width: 100%; background: transparent; padding: 5px;" onchange="updateEstimationTotal()"></td>
+                        <td><input type="text" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="total-row">
+                        <td colspan="3">Total de puntos de estimación:</td>
+                        <td id="estimation-total">0</td>
+                    </tr>
+                </tfoot>
+            </table>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Notas Adicionales</label>
+                    <textarea placeholder="Ingrese notas adicionales"></textarea>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Evidencia de la Reunión</label>
+                    <div class="evidence-upload" id="planning-evidence-container">
+                        <input type="file" id="planning-evidence" accept="image/*" style="display: none;" onchange="previewImage(this, 'planning-preview', 'planning-evidence-container')">
+                        <label for="planning-evidence" class="evidence-label" id="planning-evidence-label"><i class="fas fa-upload"></i> Seleccionar captura de la reunión</label>
+                        <img id="planning-preview" class="evidence-preview" alt="Vista previa de la evidencia">
+                        <button class="remove-image-btn" onclick="removeImage('planning-evidence', 'planning-preview', 'planning-evidence-container', 'planning-evidence-label')"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Enlace de Grabación</label>
+                    <input type="text" placeholder="Pegar enlace de grabación de la reunión">
+                </div>
+            </div>
+        </div>
+        
+        <div class="btn-container">
+            <button class="btn btn-print" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir
+            </button>
+            <button class="btn btn-capture" onclick="captureTemplate('daily-template')">
+                <i class="fas fa-camera"></i> Capturar como imagen
+            </button>
+            <button class="btn btn-back" onclick="hideTemplates()">
+                <i class="fas fa-arrow-left"></i> Volver al inicio
+            </button>
+            <button class="btn btn-markdown" onclick="exportToMarkdown('daily-template')">
+                <i class="fab fa-markdown"></i> Exportar a Markdown
+            </button>
+        </div>
+    </div>
+    
+<!-- Sprint Review Template -->
+    <div id="review-template" class="template-container">
+        <div class="watermark">REVIEW</div>
+        <div class="template-header" style="background: linear-gradient(135deg, var(--sprint-review) 0%, #00bcd4 100%);">
+            <div class="template-icon">
+                <i class="fas fa-eye"></i>
+            </div>
+            <div class="title-container">
+                <div class="template-title">Sprint Review</div>
+                <div class="template-subtitle">(Revisión del Sprint)</div>
+            </div>
+        </div>
+        
+        <div class="template-content">
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Proyecto / Módulo</label>
+                    <input type="text" placeholder="Ingrese nombre del proyecto">
+                </div>
+                <div class="form-item">
+                    <label>Sprint</label>
+                    <input type="text" placeholder="Número de sprint">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Fecha de la reunión</label>
+                    <input type="text" class="flatpickr-input" placeholder="Seleccione fecha" data-input>
+                </div>
+                <div class="form-item">
+                    <label>Hora de la reunión</label>
+                    <input type="text" class="flatpickr-input" placeholder="Seleccione hora" data-input>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Scrum Master</label>
+                    <select id="review-scrum-master">
+                        <option value="">Seleccione un Scrum Master</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label>Participantes</label>
+                    <textarea id="review-participants" placeholder="• Miembro 1&#10;• Miembro 2&#10;• Miembro 3"></textarea>
+                    <div class="row-actions">
+                        <button class="icon-btn" onclick="generateScrumMasterOptions('review-participants', 'review-scrum-master')" data-tooltip="Generar Scrum Master">
+                            <i class="fas fa-users"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Objetivo del Sprint</label>
+                    <textarea placeholder="Objetivo del sprint"></textarea>
+                </div>
+            </div>
+            
+            <div class="table-controls">
+                <h3 class="table-title">Resultados del Sprint</h3>
+                <div>
+                    <button class="simple-add-row" onclick="addRow('review-table')" data-tooltip="Añadir fila">+</button>
+                    <button class="simple-remove-row" onclick="removeRow('review-table')" data-tooltip="Eliminar última fila">-</button>
+                </div>
+            </div>
+            
+            <table id="review-table">
+                <thead>
+                    <tr>
+                        <th>Elemento Planificado</th>
+                        <th>Estado</th>
+                        <th>Observaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td>
+                            <div class="status-options">
+                                <div class="status-option">
+                                    <input type="radio" name="status1" id="done1" value="done">
+                                    <label for="done1">Completado</label>
+                                </div>
+                                <div class="status-option">
+                                    <input type="radio" name="status1" id="not-done1" value="not-done">
+                                    <label for="not-done1">No Completado</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td>
+                            <div class="status-options">
+                                <div class="status-option">
+                                    <input type="radio" name="status2" id="done2" value="done">
+                                    <label for="done2">Completado</label>
+                                </div>
+                                <div class="status-option">
+                                    <input type="radio" name="status2" id="not-done2" value="not-done">
+                                    <label for="not-done2">No Completado</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="table-controls">
+                <h3 class="table-title">Feedback de Stakeholders</h3>
+                <div>
+                    <button class="simple-add-row" onclick="addRow('feedback-table')" data-tooltip="Añadir fila">+</button>
+                    <button class="simple-remove-row" onclick="removeRow('feedback-table')" data-tooltip="Eliminar última fila">-</button>
+                </div>
+            </div>
+            
+            <table id="feedback-table">
+                <thead>
+                    <tr>
+                        <th>Aspecto Destacado</th>
+                        <th>Sugerencia/Mejora</th>
+                        <th>Acción Propuesta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Notas Adicionales</label>
+                    <textarea placeholder="Ingrese notas adicionales"></textarea>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Evidencia de la Reunión</label>
+                    <div class="evidence-upload" id="review-evidence-container">
+                        <input type="file" id="review-evidence" accept="image/*" style="display: none;" onchange="previewImage(this, 'review-preview', 'review-evidence-container')">
+                        <label for="review-evidence" class="evidence-label" id="review-evidence-label"><i class="fas fa-upload"></i> Seleccionar captura de la reunión</label>
+                        <img id="review-preview" class="evidence-preview" alt="Vista previa de la evidencia">
+                        <button class="remove-image-btn" onclick="removeImage('review-evidence', 'review-preview', 'review-evidence-container', 'review-evidence-label')"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Enlace de Grabación</label>
+                    <input type="text" placeholder="Pegar enlace de grabación de la reunión">
+                </div>
+            </div>
+        </div>
+        
+        <div class="btn-container">
+            <button class="btn btn-print" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir
+            </button>
+            <button class="btn btn-capture" onclick="captureTemplate('daily-template')">
+                <i class="fas fa-camera"></i> Capturar como imagen
+            </button>
+            <button class="btn btn-back" onclick="hideTemplates()">
+                <i class="fas fa-arrow-left"></i> Volver al inicio
+            </button>
+            <button class="btn btn-markdown" onclick="exportToMarkdown('daily-template')">
+                <i class="fab fa-markdown"></i> Exportar a Markdown
+            </button>
+        </div>
+    </div>
+    
+<!-- Sprint Retrospective Template -->
+    <div id="retro-template" class="template-container">
+        <div class="watermark">RETRO</div>
+        <div class="template-header" style="background: linear-gradient(135deg, var(--sprint-retro) 0%, #9c9efe 100%);">
+            <div class="template-icon">
+                <i class="fas fa-sync-alt"></i>
+            </div>
+            <div class="title-container">
+                <div class="template-title">Sprint Retrospective</div>
+                <div class="template-subtitle">(Retrospectiva del Sprint)</div>
+            </div>
+        </div>
+        
+        <div class="template-content">
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Proyecto / Módulo</label>
+                    <input type="text" placeholder="Ingrese nombre del proyecto">
+                </div>
+                <div class="form-item">
+                    <label>Sprint</label>
+                    <input type="text" placeholder="Número de sprint">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Fecha de la reunión</label>
+                    <input type="text" class="flatpickr-input" placeholder="Seleccione fecha" data-input>
+                </div>
+                <div class="form-item">
+                    <label>Hora de la reunión</label>
+                    <input type="text" class="flatpickr-input" placeholder="Seleccione hora" data-input>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Scrum Master</label>
+                    <select id="retro-scrum-master">
+                        <option value="">Seleccione un Scrum Master</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label>Participantes</label>
+                    <textarea id="retro-participants" placeholder="• Miembro 1&#10;• Miembro 2&#10;• Miembro 3"></textarea>
+                    <div class="row-actions">
+                        <button class="icon-btn" onclick="generateScrumMasterOptions('retro-participants', 'retro-scrum-master')" data-tooltip="Generar Scrum Master">
+                            <i class="fas fa-users"></i>
+                        </button>
+                        <button class="icon-btn" onclick="addParticipantsToRetroTable('retro-participants', 'team-feedback-table')" data-tooltip="Añadir a tabla">
+                            <i class="fas fa-table"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="table-controls">
+                <h3 class="table-title">Retrospectiva del Equipo</h3>
+                <div>
+                    <button class="simple-add-row" onclick="addRow('team-feedback-table')" data-tooltip="Añadir fila">+</button>
+                    <button class="simple-remove-row" onclick="removeRow('team-feedback-table')" data-tooltip="Eliminar última fila">-</button>
+                </div>
+            </div>
+            
+            <table id="team-feedback-table">
+                <thead>
+                    <tr>
+                        <th>Miembro</th>
+                        <th>¿Qué salió bien?</th>
+                        <th>¿Qué no salió bien?</th>
+                        <th>¿Qué podemos mejorar?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="table-controls">
+                <h3 class="table-title">Plan de Acción</h3>
+                <div>
+                    <button class="simple-add-row" onclick="addRow('action-plan-table')" data-tooltip="Añadir fila">+</button>
+                    <button class="simple-remove-row" onclick="removeRow('action-plan-table')" data-tooltip="Eliminar última fila">-</button>
+                </div>
+            </div>
+            
+            <table id="action-plan-table">
+                <thead>
+                    <tr>
+                        <th>Acción de Mejora</th>
+                        <th>Responsable</th>
+                        <th>Fecha Límite</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                        <td><input type="text" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><input type="text" class="flatpickr-input" placeholder="Seleccione fecha" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                    </tr>
+                    <tr>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                        <td><input type="text" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><input type="text" class="flatpickr-input" placeholder="Seleccione fecha" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Observaciones Adicionales</label>
+                    <textarea placeholder="Ingrese observaciones adicionales"></textarea>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Evidencia de la Reunión</label>
+                    <div class="evidence-upload" id="retro-evidence-container">
+                        <input type="file" id="retro-evidence" accept="image/*" style="display: none;" onchange="previewImage(this, 'retro-preview', 'retro-evidence-container')">
+                        <label for="retro-evidence" class="evidence-label" id="retro-evidence-label"><i class="fas fa-upload"></i> Seleccionar captura de la reunión</label>
+                        <img id="retro-preview" class="evidence-preview" alt="Vista previa de la evidencia">
+                        <button class="remove-image-btn" onclick="removeImage('retro-evidence', 'retro-preview', 'retro-evidence-container', 'retro-evidence-label')"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Enlace de Grabación</label>
+                    <input type="text" placeholder="Pegar enlace de grabación de la reunión">
+                </div>
+            </div>
+        </div>
+        
+        <div class="btn-container">
+            <button class="btn btn-print" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir
+            </button>
+            <button class="btn btn-capture" onclick="captureTemplate('daily-template')">
+                <i class="fas fa-camera"></i> Capturar como imagen
+            </button>
+            <button class="btn btn-back" onclick="hideTemplates()">
+                <i class="fas fa-arrow-left"></i> Volver al inicio
+            </button>
+            <button class="btn btn-markdown" onclick="exportToMarkdown('daily-template')">
+                <i class="fab fa-markdown"></i> Exportar a Markdown
+            </button>
+        </div>
+    </div>
+    
+<!-- Product Backlog Template -->
+    <div id="backlog-template" class="template-container">
+        <div class="watermark">BACKLOG</div>
+        <div class="template-header" style="background: linear-gradient(135deg, var(--product-backlog) 0%, #46485f 100%);">
+            <div class="template-icon">
+                <i class="fas fa-clipboard-list"></i>
+            </div>
+            <div class="title-container">
+                <div class="template-title">Product Backlog</div>
+                <div class="template-subtitle">(Backlog del Producto)</div>
+            </div>
+        </div>
+        
+        <div class="template-content">
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Proyecto / Producto</label>
+                    <input type="text" placeholder="Ingrese nombre del proyecto o producto">
+                </div>
+                <div class="form-item">
+                    <label>Product Owner</label>
+                    <input type="text" placeholder="Nombre del product owner">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Fecha de Creación</label>
+                    <input type="text" class="flatpickr-input" placeholder="Seleccione fecha" data-input>
+                </div>
+                <div class="form-item">
+                    <label>Última Actualización</label>
+                    <input type="text" class="flatpickr-input" placeholder="Seleccione fecha" data-input>
+                </div>
+            </div>
+            
+            <div class="table-controls">
+                <h3 class="table-title">Elementos del Product Backlog</h3>
+                <div>
+                    <button class="simple-add-row" onclick="addRow('backlog-table')" data-tooltip="Añadir fila">+</button>
+                    <button class="simple-remove-row" onclick="removeRow('backlog-table')" data-tooltip="Eliminar última fila">-</button>
+                </div>
+            </div>
+            
+            <table id="backlog-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Criterios de Aceptación</th>
+                        <th>Prioridad</th>
+                        <th>Estimación (puntos)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder="HU-001" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><input type="text" placeholder="Nombre del ítem" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                        <td>
+                            <select style="border: none; width: 100%; background: transparent; padding: 5px;">
+                                <option value="">Seleccionar</option>
+                                <option value="Alta">Alta</option>
+                                <option value="Media">Media</option>
+                                <option value="Baja">Baja</option>
+                            </select>
+                        </td>
+                        <td><input type="number" min="0" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder="HU-002" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><input type="text" placeholder="Nombre del ítem" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                        <td>
+                            <select style="border: none; width: 100%; background: transparent; padding: 5px;">
+                                <option value="">Seleccionar</option>
+                                <option value="Alta">Alta</option>
+                                <option value="Media">Media</option>
+                                <option value="Baja">Baja</option>
+                            </select>
+                        </td>
+                        <td><input type="number" min="0" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Notas Adicionales</label>
+                    <textarea placeholder="Ingrese notas adicionales sobre el backlog"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="btn-container">
+            <button class="btn btn-print" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir
+            </button>
+            <button class="btn btn-capture" onclick="captureTemplate('daily-template')">
+                <i class="fas fa-camera"></i> Capturar como imagen
+            </button>
+            <button class="btn btn-back" onclick="hideTemplates()">
+                <i class="fas fa-arrow-left"></i> Volver al inicio
+            </button>
+            <button class="btn btn-markdown" onclick="exportToMarkdown('daily-template')">
+                <i class="fab fa-markdown"></i> Exportar a Markdown
+            </button>
+        </div>
+    </div>
+    
+<!-- Sprint Backlog Template -->
+    <div id="sprintbacklog-template" class="template-container">
+        <div class="watermark">SPRINT BACKLOG</div>
+        <div class="template-header" style="background: linear-gradient(135deg, var(--sprint-backlog) 0%, #9b9b9b 100%);">
+            <div class="template-icon">
+                <i class="fas fa-list-alt"></i>
+            </div>
+            <div class="title-container">
+                <div class="template-title">Sprint Backlog</div>
+                <div class="template-subtitle">(Backlog del Sprint)</div>
+            </div>
+        </div>
+        
+        <div class="template-content">
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Proyecto / Producto</label>
+                    <input type="text" placeholder="Ingrese nombre del proyecto o producto">
+                </div>
+                <div class="form-item">
+                    <label>Sprint</label>
+                    <input type="text" placeholder="Número de sprint">
+                </div>
+            </div>
+            
+            <div class="table-controls">
+                <h3 class="table-title">Elementos del Sprint Backlog</h3>
+                <div>
+                    <button class="simple-add-row" onclick="addRow('sprintbacklog-table')" data-tooltip="Añadir fila">+</button>
+                    <button class="simple-remove-row" onclick="removeRow('sprintbacklog-table')" data-tooltip="Eliminar última fila">-</button>
+                </div>
+            </div>
+            
+            <table id="sprintbacklog-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Historia de Usuario</th>
+                        <th>Tareas Asociadas</th>
+                        <th>Responsable</th>
+                        <th>Estado</th>
+                        <th>Estimación (puntos)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder="HU-001" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><input type="text" placeholder="Nombre del ítem" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;" placeholder="- Tarea 1&#10;- Tarea 2"></textarea></td>
+                        <td><input type="text" placeholder="Nombre Apellido" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td>
+                            <select style="border: none; width: 100%; background: transparent; padding: 5px;">
+                                <option value="">Seleccionar</option>
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="En progreso">En progreso</option>
+                                <option value="Completado">Completado</option>
+                            </select>
+                        </td>
+                        <td><input type="number" min="0" class="sprint-estimation-point" style="border: none; width: 100%; background: transparent; padding: 5px;" onchange="updateSprintEstimationTotal()"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder="HU-002" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><input type="text" placeholder="Nombre del ítem" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><textarea style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;" placeholder="- Tarea 1&#10;- Tarea 2"></textarea></td>
+                        <td><input type="text" placeholder="Nombre Apellido" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td>
+                            <select style="border: none; width: 100%; background: transparent; padding: 5px;">
+                                <option value="">Seleccionar</option>
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="En progreso">En progreso</option>
+                                <option value="Completado">Completado</option>
+                            </select>
+                        </td>
+                        <td><input type="number" min="0" class="sprint-estimation-point" style="border: none; width: 100%; background: transparent; padding: 5px;" onchange="updateSprintEstimationTotal()"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="total-row">
+                        <td colspan="5">Total de puntos de estimación del Sprint:</td>
+                        <td id="sprint-estimation-total">0</td>
+                    </tr>
+                </tfoot>
+            </table>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Notas Adicionales</label>
+                    <textarea placeholder="Ingrese notas adicionales sobre el backlog del sprint"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="btn-container">
+            <button class="btn btn-print" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir
+            </button>
+            <button class="btn btn-capture" onclick="captureTemplate('daily-template')">
+                <i class="fas fa-camera"></i> Capturar como imagen
+            </button>
+            <button class="btn btn-back" onclick="hideTemplates()">
+                <i class="fas fa-arrow-left"></i> Volver al inicio
+            </button>
+            <button class="btn btn-markdown" onclick="exportToMarkdown('daily-template')">
+                <i class="fab fa-markdown"></i> Exportar a Markdown
+            </button>
+        </div>
+    </div>
+
+<!-- Spikes Template -->
+    <div id="spikes-template" class="template-container">
+    <div class="watermark">SPIKE</div>
+    <div class="template-header" style="background: linear-gradient(135deg, var(--spikes) 0%, #ffa726 100%);">
+        <div class="template-icon">
+        <i class="fas fa-flask"></i>
+        </div>
+        <div class="title-container">
+        <div class="template-title">Spike</div>
+        <div class="template-subtitle">(Investigación Técnica)</div>
+        </div>
+    </div>
+    <div class="template-content">
+        <div class="form-group">
+        <div class="form-item">
+            <label>Título del Spike</label>
+            <input type="text" placeholder="Ingrese el nombre del Spike">
+        </div>
+        <div class="form-item">
+            <label>Proyecto / Módulo</label>
+            <input type="text" placeholder="Nombre del proyecto o módulo">
+        </div>
+        </div>
+        
+        <div class="form-group">
+        <div class="form-item">
+            <label>Contexto</label>
+            <textarea placeholder="Explicación breve del contexto que motiva el Spike: problema, incertidumbre técnica, necesidad de investigación"></textarea>
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Objetivo</label>
+            <textarea placeholder="Descripción clara de lo que se busca lograr con el Spike"></textarea>
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Alcance</label>
+            <textarea placeholder="• Elemento 1 que se incluirá en el Spike&#10;• Elemento 2 que se incluirá en el Spike&#10;• Elemento 3 que se incluirá en el Spike"></textarea>
+        </div>
+        </div>
+
+        <div class="table-controls">
+        <h3 class="table-title">Actividades del Spike</h3>
+        <div>
+            <button class="simple-add-row" onclick="addRow('spikes-activities-table')" data-tooltip="Añadir fila">+</button>
+            <button class="simple-remove-row" onclick="removeRow('spikes-activities-table')" data-tooltip="Eliminar última fila">-</button>
+        </div>
+        </div>
+        <table id="spikes-activities-table">
+        <thead>
+            <tr>
+            <th>Actividad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td><input type="text" placeholder="Actividad a realizar" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Resultados del Spike</label>
+            <textarea placeholder="Descripción de hallazgos, aprendizajes, decisiones técnicas o funcionales obtenidas tras realizar el Spike"></textarea>
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Conclusiones</label>
+            <textarea placeholder="Resumen de las conclusiones más importantes y recomendaciones derivadas del Spike"></textarea>
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Decisión</label>
+            <textarea placeholder="Decisión tomada basada en los resultados y conclusiones del Spike"></textarea>
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Evidencia de la Investigación</label>
+            <div class="evidence-upload" id="spikes-evidence-container">
+            <input type="file" id="spikes-evidence" accept="image/*" onchange="previewImage(this, 'spikes-evidence-preview', 'spikes-evidence-container')">
+            <label class="evidence-label" for="spikes-evidence" id="spikes-evidence-label">
+                <i class="fas fa-cloud-upload-alt"></i> Haga clic para subir evidencia
+            </label>
+            <img id="spikes-evidence-preview" class="evidence-preview">
+            <button class="remove-image-btn" onclick="removeImage('spikes-evidence', 'spikes-evidence-preview', 'spikes-evidence-container', 'spikes-evidence-label')">
+                <i class="fas fa-times"></i>
+            </button>
+            </div>
+        </div>
+        </div>
+
+        <div class="btn-container">
+            <button class="btn btn-print" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir
+            </button>
+            <button class="btn btn-capture" onclick="captureTemplate('daily-template')">
+                <i class="fas fa-camera"></i> Capturar como imagen
+            </button>
+            <button class="btn btn-back" onclick="hideTemplates()">
+                <i class="fas fa-arrow-left"></i> Volver al inicio
+            </button>
+            <button class="btn btn-markdown" onclick="exportToMarkdown('daily-template')">
+                <i class="fab fa-markdown"></i> Exportar a Markdown
+            </button>
+        </div>
+    </div>
+    </div>
+
+<!-- Demo Template -->
+    <div id="demo-template" class="template-container">
+    <div class="watermark">DEMO</div>
+    <div class="template-header" style="background: linear-gradient(135deg, var(--demo) 0%, #9ccc65 100%);">
+        <div class="template-icon">
+        <i class="fas fa-play-circle"></i>
+        </div>
+        <div class="title-container">
+        <div class="template-title">Demo</div>
+        <div class="template-subtitle">(Demostración de Producto)</div>
+        </div>
+    </div>
+    <div class="template-content">
+        <div class="form-group">
+        <div class="form-item">
+            <label>Proyecto / Producto</label>
+            <input type="text" placeholder="Nombre del proyecto o producto">
+        </div>
+        <div class="form-item">
+            <label>Sprint / Iteración</label>
+            <input type="text" placeholder="Número y fechas del sprint">
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Fecha de la Demo</label>
+            <input type="text" class="flatpickr-input" placeholder="Seleccione fecha" data-input>
+        </div>
+        <div class="form-item">
+            <label>Facilitador / Presentador</label>
+            <input type="text" placeholder="Nombre del presentador">
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Participantes / Stakeholders</label>
+            <textarea placeholder="• Nombre participante 1&#10;• Nombre participante 2&#10;• Nombre participante 3"></textarea>
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Objetivo de la Demo</label>
+            <textarea placeholder="Descripción breve de lo que se va a mostrar"></textarea>
+        </div>
+        </div>
+
+        <div class="table-controls">
+        <h3 class="table-title">Elementos a Mostrar</h3>
+        <div>
+            <button class="simple-add-row" onclick="addRow('demo-elements-table')" data-tooltip="Añadir fila">+</button>
+            <button class="simple-remove-row" onclick="removeRow('demo-elements-table')" data-tooltip="Eliminar última fila">-</button>
+        </div>
+        </div>
+        <table id="demo-elements-table">
+        <thead>
+            <tr>
+            <th>Aspecto</th>
+            <th>Detalle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td><input type="text" placeholder="Nombre del Producto" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td><textarea placeholder="Nombre del producto o módulo" style="border: none; width: 100%; min-height: 60px; resize: none; background: transparent;"></textarea></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <div class="table-controls">
+        <h3 class="table-title">Feedback Recibido</h3>
+        <div>
+            <button class="simple-add-row" onclick="addRow('demo-feedback-table')" data-tooltip="Añadir fila">+</button>
+            <button class="simple-remove-row" onclick="removeRow('demo-feedback-table')" data-tooltip="Eliminar última fila">-</button>
+        </div>
+        </div>
+        <table id="demo-feedback-table">
+        <thead>
+            <tr>
+            <th>Comentario / Observación</th>
+            <th>Stakeholder</th>
+            <th>Acción propuesta</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td><textarea placeholder="Feedback recibido" style="border: none; width: 100%; min-height: 60px; resize: none; background: transparent;"></textarea></td>
+            <td><input type="text" placeholder="Nombre del stakeholder" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td><textarea placeholder="Acción a tomar" style="border: none; width: 100%; min-height: 60px; resize: none; background: transparent;"></textarea></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Conclusiones / Próximos pasos</label>
+            <textarea placeholder="Resumen de los resultados de la demo y acciones a seguir"></textarea>
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Notas Adicionales</label>
+            <textarea placeholder="Comentarios extra de la reunión, riesgos identificados, decisiones, acuerdos, dependencias, etc."></textarea>
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Enlace de Grabación</label>
+            <input type="text" placeholder="URL de la grabación">
+        </div>
+        </div>
+
+        <div class="btn-container">
+            <button class="btn btn-print" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir
+            </button>
+            <button class="btn btn-capture" onclick="captureTemplate('daily-template')">
+                <i class="fas fa-camera"></i> Capturar como imagen
+            </button>
+            <button class="btn btn-back" onclick="hideTemplates()">
+                <i class="fas fa-arrow-left"></i> Volver al inicio
+            </button>
+            <button class="btn btn-markdown" onclick="exportToMarkdown('daily-template')">
+                <i class="fab fa-markdown"></i> Exportar a Markdown
+            </button>
+        </div>
+    </div>
+    </div>
+
+<!-- Roadmap Template -->
+    <div id="roadmap-template" class="template-container">
+    <div class="watermark">ROADMAP</div>
+    <div class="template-header" style="background: linear-gradient(135deg, var(--roadmap) 0%, #ec407a 100%);">
+        <div class="template-icon">
+        <i class="fas fa-map"></i>
+        </div>
+        <div class="title-container">
+        <div class="template-title">Roadmap del Proyecto</div>
+        <div class="template-subtitle">(Planificación Estratégica)</div>
+        </div>
+    </div>
+    <div class="template-content">
+        <div class="form-group">
+        <div class="form-item">
+            <label>Proyecto / Producto</label>
+            <input type="text" placeholder="Nombre del proyecto" id="roadmap-project-name">
+        </div>
+        <div class="form-item">
+            <label>Responsable</label>
+            <input type="text" placeholder="Nombre del responsable / Product Owner / PM" id="roadmap-responsible">
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Fecha de Creación</label>
+            <input type="text" class="flatpickr-input" placeholder="Seleccione fecha" data-input id="roadmap-creation-date">
+        </div>
+        <div class="form-item">
+            <label>Última Actualización</label>
+            <input type="text" class="flatpickr-input" placeholder="Seleccione fecha" data-input id="roadmap-update-date">
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Objetivo del Roadmap</label>
+            <textarea placeholder="Descripción breve del propósito del roadmap: planificación de entregables, visión a mediano/largo plazo, prioridades estratégicas, etc." id="roadmap-objective"></textarea>
+        </div>
+        </div>
+
+        <!-- Hitos y Entregables -->
+        <div class="table-controls">
+        <h3 class="table-title">Hitos y Entregables</h3>
+        <div>
+            <button class="simple-add-row" onclick="addRow('roadmap-milestones-table')" data-tooltip="Añadir hito">+</button>
+            <button class="simple-remove-row" onclick="removeRow('roadmap-milestones-table')" data-tooltip="Eliminar hito">-</button>
+        </div>
+        </div>
+        <table id="roadmap-milestones-table">
+        <thead>
+            <tr>
+            <th width="200px">Hito / Entregable</th>
+            <th>Descripción</th>
+            <th width="120px">Fecha de Inicio</th>
+            <th width="120px">Fecha de Entrega</th>
+            <th width="120px">Responsable</th>
+            <th width="120px">Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td><input type="text" placeholder="Hito 1" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td><textarea placeholder="Descripción breve" style="border: none; width: 100%; min-height: 60px; resize: none; background: transparent;"></textarea></td>
+            <td><input type="text" class="flatpickr-input" placeholder="DD/MM/AAAA" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td><input type="text" class="flatpickr-input" placeholder="DD/MM/AAAA" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td><input type="text" placeholder="Nombre" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td>
+                <select style="border: none; width: 100%; background: transparent;">
+                <option value="planeado">Planeado</option>
+                <option value="en-progreso">En progreso</option>
+                <option value="completado">Completado</option>
+                <option value="atrasado">Atrasado</option>
+                </select>
+            </td>
+            </tr>
+        </tbody>
+        </table>
+
+        <!-- Sprints -->
+        <div class="table-controls">
+        <h3 class="table-title">Sprints</h3>
+        <div>
+            <button class="simple-add-row" onclick="addRow('roadmap-sprints-table')" data-tooltip="Añadir sprint">+</button>
+            <button class="simple-remove-row" onclick="removeRow('roadmap-sprints-table')" data-tooltip="Eliminar sprint">-</button>
+        </div>
+        </div>
+        <table id="roadmap-sprints-table">
+        <thead>
+            <tr>
+            <th width="100px">Sprint</th>
+            <th>Objetivo Principal</th>
+            <th width="120px">Fecha de Inicio</th>
+            <th width="120px">Fecha de Entrega</th>
+            <th width="100px">Duración</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td><input type="text" placeholder="Sprint 1" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td><textarea placeholder="Objetivo general del sprint" style="border: none; width: 100%; min-height: 60px; resize: none; background: transparent;"></textarea></td>
+            <td><input type="text" class="flatpickr-input" placeholder="DD/MM/AAAA" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td><input type="text" class="flatpickr-input" placeholder="DD/MM/AAAA" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td><input type="text" placeholder="2 semanas" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <!-- Riesgos y Consideraciones -->
+        <div class="table-controls">
+        <h3 class="table-title">Riesgos y Consideraciones</h3>
+        <div>
+            <button class="simple-add-row" onclick="addRow('roadmap-risks-table')" data-tooltip="Añadir riesgo">+</button>
+            <button class="simple-remove-row" onclick="removeRow('roadmap-risks-table')" data-tooltip="Eliminar riesgo">-</button>
+        </div>
+        </div>
+        <table id="roadmap-risks-table">
+        <thead>
+            <tr>
+            <th width="150px">Riesgo</th>
+            <th>Plan de Mitigación</th>
+            <th width="100px">Probabilidad</th>
+            <th width="100px">Impacto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td><input type="text" placeholder="Riesgo 1" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td><textarea placeholder="Plan de mitigación" style="border: none; width: 100%; min-height: 60px; resize: none; background: transparent;"></textarea></td>
+            <td>
+                <select style="border: none; width: 100%; background: transparent;">
+                <option value="alta">Alta</option>
+                <option value="media">Media</option>
+                <option value="baja">Baja</option>
+                </select>
+            </td>
+            <td>
+                <select style="border: none; width: 100%; background: transparent;">
+                <option value="alto">Alto</option>
+                <option value="medio">Medio</option>
+                <option value="bajo">Bajo</option>
+                </select>
+            </td>
+            </tr>
+        </tbody>
+        </table>
+
+        <!-- Gráfico de Roadmap -->
+        <div class="form-group">
+        <div class="form-item" style="flex: 1 1 100%;">
+            <label>Gráfico de Roadmap</label>
+            <div class="roadmap-chart-container">
+            <div class="roadmap-controls">
+                <button class="icon-btn" onclick="generateRoadmapChart()" data-tooltip="Generar gráfico">
+                <i class="fas fa-sync-alt"></i>
+                </button>
+                <button class="icon-btn" onclick="exportRoadmapChart()" data-tooltip="Exportar gráfico">
+                <i class="fas fa-download"></i>
+                </button>
+            </div>
+            <div class="roadmap-chart" id="roadmap-chart">
+                <div class="roadmap-timeline" id="roadmap-timeline">
+                <!-- El gráfico se generará aquí -->
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Notas Adicionales</label>
+            <textarea placeholder="Comentarios generales sobre backlog, dependencias, prioridades, decisiones estratégicas, acuerdos, etc." id="roadmap-notes"></textarea>
+        </div>
+        </div>
+
+            <div class="btn-container">
+                <button class="btn btn-print" onclick="window.print()">
+                    <i class="fas fa-print"></i> Imprimir
+                </button>
+                <button class="btn btn-capture" onclick="captureTemplate('daily-template')">
+                    <i class="fas fa-camera"></i> Capturar como imagen
+                </button>
+                <button class="btn btn-back" onclick="hideTemplates()">
+                    <i class="fas fa-arrow-left"></i> Volver al inicio
+                </button>
+                <button class="btn btn-markdown" onclick="exportToMarkdown('daily-template')">
+                    <i class="fab fa-markdown"></i> Exportar a Markdown
+                </button>
+            </div>
+    </div>
+    </div>
+
+<!-- Definition of Done Template -->
+    <div id="definition-done-template" class="template-container">
+    <div class="watermark">DONE</div>
+    <div class="template-header" style="background: linear-gradient(135deg, var(--definition-done) 0%, #06923E 100%);">
+        <div class="template-icon">
+        <i class="fas fa-flag-checkered"></i>
+        </div>
+        <div class="title-container">
+        <div class="template-title">Definition of Done</div>
+        <div class="template-subtitle">(Definición de Terminado)</div>
+        </div>
+    </div>
+    <div class="template-content">
+        <div class="form-group">
+        <div class="form-item">
+            <label>Proyecto / Producto</label>
+            <input type="text" placeholder="Nombre del proyecto" id="dod-project-name">
+        </div>
+        <div class="form-item">
+            <label>Responsable</label>
+            <input type="text" placeholder="Nombre del Scrum Master / Product Owner" id="dod-responsible">
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Fecha de Creación</label>
+            <input type="text" class="flatpickr-input" placeholder="Seleccione fecha" data-input id="dod-creation-date">
+        </div>
+        <div class="form-item">
+            <label>Última Actualización</label>
+            <input type="text" class="flatpickr-input" placeholder="Seleccione fecha" data-input id="dod-update-date">
+        </div>
+        </div>
+
+        <!-- Criterios Generales de DoD -->
+        <div class="table-controls">
+        <h3 class="table-title">Criterios Generales de DoD</h3>
+        <div>
+            <button class="simple-add-row" onclick="addRow('dod-criteria-table')" data-tooltip="Añadir criterio">+</button>
+            <button class="simple-remove-row" onclick="removeRow('dod-criteria-table')" data-tooltip="Eliminar criterio">-</button>
+        </div>
+        </div>
+        <table id="dod-criteria-table">
+        <thead>
+            <tr>
+            <th width="80px">Número</th>
+            <th>Criterio</th>
+            <th width="100px">Prioridad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td><input type="text" value="1" readonly style="border: none; width: 100%; background: transparent; padding: 5px; text-align: center; font-weight: bold;"></td>
+            <td><input type="text" placeholder="Descripción del criterio (ej: El código está revisado y aprobado)" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td>
+                <select style="border: none; width: 100%; background: transparent;">
+                <option value="alta">Alta</option>
+                <option value="media">Media</option>
+                <option value="baja">Baja</option>
+                </select>
+            </td>
+            </tr>
+            <tr>
+            <td><input type="text" value="2" readonly style="border: none; width: 100%; background: transparent; padding: 5px; text-align: center; font-weight: bold;"></td>
+            <td><input type="text" placeholder="Descripción del criterio (ej: Las pruebas unitarias pasan)" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td>
+                <select style="border: none; width: 100%; background: transparent;">
+                <option value="alta">Alta</option>
+                <option value="media">Media</option>
+                <option value="baja">Baja</option>
+                </select>
+            </td>
+            </tr>
+        </tbody>
+        </table>
+
+        <!-- Checklist de Verificación -->
+        <div class="table-controls">
+        <h3 class="table-title">Checklist de Verificación DoD</h3>
+        <div>
+            <button class="simple-add-row" onclick="addRow('dod-checklist-table')" data-tooltip="Añadir ítem">+</button>
+            <button class="simple-remove-row" onclick="removeRow('dod-checklist-table')" data-tooltip="Eliminar ítem">-</button>
+        </div>
+        </div>
+        <table id="dod-checklist-table">
+        <thead>
+            <tr>
+            <th>Actividad o Ítem</th>
+            <th>Descripción</th>
+            <th width="120px">Cumple DoD</th>
+            <th width="100px">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td><input type="text" placeholder="Actividad 1" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td><textarea placeholder="Descripción breve de la actividad o requisito" style="border: none; width: 100%; min-height: 60px; resize: none; background: transparent;"></textarea></td>
+            <td>
+                <select style="border: none; width: 100%; background: transparent;" onchange="updateDoDChecklistStatus(this)">
+                <option value="no">No</option>
+                <option value="si">Sí</option>
+                <option value="na">N/A</option>
+                </select>
+            </td>
+            <td style="text-align: center;">
+                <button class="icon-btn" onclick="moveDoDChecklistItemUp(this)" data-tooltip="Mover arriba" style="background: #6b7280;">
+                <i class="fas fa-arrow-up"></i>
+                </button>
+                <button class="icon-btn" onclick="moveDoDChecklistItemDown(this)" data-tooltip="Mover abajo" style="background: #6b7280;">
+                <i class="fas fa-arrow-down"></i>
+                </button>
+            </td>
+            </tr>
+            <tr>
+            <td><input type="text" placeholder="Actividad 2" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td><textarea placeholder="Descripción breve de la actividad o requisito" style="border: none; width: 100%; min-height: 60px; resize: none; background: transparent;"></textarea></td>
+            <td>
+                <select style="border: none; width: 100%; background: transparent;" onchange="updateDoDChecklistStatus(this)">
+                <option value="no">No</option>
+                <option value="si">Sí</option>
+                <option value="na">N/A</option>
+                </select>
+            </td>
+            <td style="text-align: center;">
+                <button class="icon-btn" onclick="moveDoDChecklistItemUp(this)" data-tooltip="Mover arriba" style="background: #6b7280;">
+                <i class="fas fa-arrow-up"></i>
+                </button>
+                <button class="icon-btn" onclick="moveDoDChecklistItemDown(this)" data-tooltip="Mover abajo" style="background: #6b7280;">
+                <i class="fas fa-arrow-down"></i>
+                </button>
+            </td>
+            </tr>
+        </tbody>
+        </table>
+
+        <!-- Resumen de Estado -->
+        <div class="form-group">
+        <div class="form-item">
+            <label>Resumen de Estado DoD</label>
+            <div class="dod-summary">
+            <div class="summary-item">
+                <span class="summary-label">Criterios Cumplidos:</span>
+                <span class="summary-value" id="dod-completed">0</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Criterios Pendientes:</span>
+                <span class="summary-value" id="dod-pending">0</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Porcentaje de Completitud:</span>
+                <span class="summary-value" id="dod-percentage">0%</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Estado General:</span>
+                <span class="summary-value" id="dod-status">No Terminado</span>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Notas Adicionales</label>
+            <textarea placeholder="Comentarios del equipo, acuerdos sobre criterios específicos, excepciones o ajustes que se aplican a todo el proyecto" id="dod-notes"></textarea>
+        </div>
+        </div>
+
+        <div class="btn-container">
+            <button class="btn btn-print" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir
+            </button>
+            <button class="btn btn-capture" onclick="captureTemplate('daily-template')">
+                <i class="fas fa-camera"></i> Capturar como imagen
+            </button>
+            <button class="btn btn-back" onclick="hideTemplates()">
+                <i class="fas fa-arrow-left"></i> Volver al inicio
+            </button>
+            <button class="btn btn-markdown" onclick="exportToMarkdown('daily-template')">
+                <i class="fab fa-markdown"></i> Exportar a Markdown
+            </button>
+        </div>
+    </div>
+    </div>
+
+<!-- Definition of Ready Template -->
+    <div id="definition-ready-template" class="template-container">
+    <div class="watermark">READY</div>
+    <div class="template-header" style="background: linear-gradient(135deg, var(--definition-ready) 0%, #4fc3f7 100%);">
+        <div class="template-icon">
+        <i class="fas fa-clipboard-check"></i>
+        </div>
+        <div class="title-container">
+        <div class="template-title">Definition of Ready</div>
+        <div class="template-subtitle">(Definición de Listo)</div>
+        </div>
+    </div>
+    <div class="template-content">
+        <div class="form-group">
+        <div class="form-item">
+            <label>Proyecto / Producto</label>
+            <input type="text" placeholder="Nombre del proyecto" id="dor-project-name">
+        </div>
+        <div class="form-item">
+            <label>Responsable</label>
+            <input type="text" placeholder="Nombre del Scrum Master / Product Owner" id="dor-responsible">
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Fecha de Creación</label>
+            <input type="text" class="flatpickr-input" placeholder="Seleccione fecha" data-input id="dor-creation-date">
+        </div>
+        <div class="form-item">
+            <label>Última Actualización</label>
+            <input type="text" class="flatpickr-input" placeholder="Seleccione fecha" data-input id="dor-update-date">
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Objetivo del DoR</label>
+            <textarea placeholder="Definir brevemente el propósito: asegurar que todas las historias o ítems tengan la información suficiente, criterios claros y dependencias identificadas antes de que el equipo pueda comenzar a trabajar." id="dor-objective"></textarea>
+        </div>
+        </div>
+
+        <!-- Criterios Generales de DoR -->
+        <div class="table-controls">
+        <h3 class="table-title">Criterios Generales de DoR</h3>
+        <div>
+            <button class="simple-add-row" onclick="addRow('dor-criteria-table')" data-tooltip="Añadir criterio">+</button>
+            <button class="simple-remove-row" onclick="removeRow('dor-criteria-table')" data-tooltip="Eliminar criterio">-</button>
+        </div>
+        </div>
+        <table id="dor-criteria-table">
+        <thead>
+            <tr>
+            <th width="80px">Número</th>
+            <th>Criterio</th>
+            <th width="100px">Prioridad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td><input type="text" value="1" readonly style="border: none; width: 100%; background: transparent; padding: 5px; text-align: center; font-weight: bold;"></td>
+            <td><input type="text" placeholder="Descripción del criterio (ej: La historia de usuario está claramente definida)" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td>
+                <select style="border: none; width: 100%; background: transparent;">
+                <option value="alta">Alta</option>
+                <option value="media">Media</option>
+                <option value="baja">Baja</option>
+                </select>
+            </td>
+            </tr>
+            <tr>
+            <td><input type="text" value="2" readonly style="border: none; width: 100%; background: transparent; padding: 5px; text-align: center; font-weight: bold;"></td>
+            <td><input type="text" placeholder="Descripción del criterio (ej: Los criterios de aceptación están definidos)" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td>
+                <select style="border: none; width: 100%; background: transparent;">
+                <option value="alta">Alta</option>
+                <option value="media">Media</option>
+                <option value="baja">Baja</option>
+                </select>
+            </td>
+            </tr>
+        </tbody>
+        </table>
+
+    <!-- Checklist de Verificación -->
+        <div class="table-controls">
+        <h3 class="table-title">Checklist de Verificación DoR</h3>
+        <div>
+            <button class="simple-add-row" onclick="addRow('dor-checklist-table')" data-tooltip="Añadir ítem">+</button>
+            <button class="simple-remove-row" onclick="removeRow('dor-checklist-table')" data-tooltip="Eliminar ítem">-</button>
+        </div>
+        </div>
+        <table id="dor-checklist-table">
+        <thead>
+            <tr>
+            <th>Criterio</th>
+            <th>Descripción</th>
+            <th width="120px">Cumple DoR</th>
+            <th width="100px">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td><input type="text" placeholder="Criterio 1" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td><textarea placeholder="Breve descripción del requisito" style="border: none; width: 100%; min-height: 60px; resize: none; background: transparent;"></textarea></td>
+            <td>
+                <select style="border: none; width: 100%; background: transparent;" onchange="updateChecklistStatus(this)">
+                <option value="no">No</option>
+                <option value="si">Sí</option>
+                <option value="na">N/A</option>
+                </select>
+            </td>
+            <td style="text-align: center;">
+                <button class="icon-btn" onclick="moveChecklistItemUp(this)" data-tooltip="Mover arriba" style="background: #6b7280;">
+                <i class="fas fa-arrow-up"></i>
+                </button>
+                <button class="icon-btn" onclick="moveChecklistItemDown(this)" data-tooltip="Mover abajo" style="background: #6b7280;">
+                <i class="fas fa-arrow-down"></i>
+                </button>
+            </td>
+            </tr>
+            <tr>
+            <td><input type="text" placeholder="Criterio 2" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td><textarea placeholder="Breve descripción del requisito" style="border: none; width: 100%; min-height: 60px; resize: none; background: transparent;"></textarea></td>
+            <td>
+                <select style="border: none; width: 100%; background: transparent;" onchange="updateChecklistStatus(this)">
+                <option value="no">No</option>
+                <option value="si">Sí</option>
+                <option value="na">N/A</option>
+                </select>
+            </td>
+            <td style="text-align: center;">
+                <button class="icon-btn" onclick="moveChecklistItemUp(this)" data-tooltip="Mover arriba" style="background: #6b7280;">
+                <i class="fas fa-arrow-up"></i>
+                </button>
+                <button class="icon-btn" onclick="moveChecklistItemDown(this)" data-tooltip="Mover abajo" style="background: #6b7280;">
+                <i class="fas fa-arrow-down"></i>
+                </button>
+            </td>
+            </tr>
+        </tbody>
+        </table>
+
+        <!-- Resumen de Estado -->
+        <div class="form-group">
+        <div class="form-item">
+            <label>Resumen de Estado DoR</label>
+            <div class="dor-summary">
+            <div class="summary-item">
+                <span class="summary-label">Criterios Cumplidos:</span>
+                <span class="summary-value" id="dor-completed">0</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Criterios Pendientes:</span>
+                <span class="summary-value" id="dor-pending">0</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Porcentaje de Completitud:</span>
+                <span class="summary-value" id="dor-percentage">0%</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Estado General:</span>
+                <span class="summary-value" id="dor-status">No Listo</span>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Notas Adicionales</label>
+            <textarea placeholder="Comentarios del equipo, acuerdos sobre criterios específicos, excepciones o ajustes aplicables a todo el proyecto" id="dor-notes"></textarea>
+        </div>
+        </div>
+
+        <div class="btn-container">
+            <button class="btn btn-print" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir
+            </button>
+            <button class="btn btn-capture" onclick="captureTemplate('daily-template')">
+                <i class="fas fa-camera"></i> Capturar como imagen
+            </button>
+            <button class="btn btn-back" onclick="hideTemplates()">
+                <i class="fas fa-arrow-left"></i> Volver al inicio
+            </button>
+            <button class="btn btn-markdown" onclick="exportToMarkdown('daily-template')">
+                <i class="fab fa-markdown"></i> Exportar a Markdown
+            </button>
+        </div>
+    </div>
+    </div>
+
+<!-- User Stories Template -->
+    <div id="user-stories-template" class="template-container">
+    <div class="watermark">USER STORY</div>
+    <div class="template-header" style="background: linear-gradient(135deg, var(--user-stories) 0%, #1e40af 100%);">
+        <div class="template-icon">
+        <i class="fas fa-user"></i>
+        </div>
+        <div class="title-container">
+        <div class="template-title">User Story</div>
+        <div class="template-subtitle">(Historia de Usuario)</div>
+        </div>
+    </div>
+    <div class="template-content">
+        <div class="table-controls">
+        <h3 class="table-title">Información de la Historia</h3>
+        </div>
+        <table>
+        <thead>
+            <tr>
+            <th>Campo</th>
+            <th>Detalle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td><strong>ID</strong></td>
+            <td><input type="text" placeholder="HU-01, HU-02, etc." style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            </tr>
+            <tr>
+            <td><strong>Título / Nombre</strong></td>
+            <td><input type="text" placeholder="Nombre breve y descriptivo de la historia" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            </tr>
+            <tr>
+            <td><strong>Prioridad</strong></td>
+            <td>
+                <select style="border: none; width: 100%; background: transparent;">
+                <option value="alta">Alta</option>
+                <option value="media">Media</option>
+                <option value="baja">Baja</option>
+                </select>
+            </td>
+            </tr>
+            <tr>
+            <td><strong>Estimación de Esfuerzo</strong></td>
+            <td><input type="text" placeholder="Puntos de historia, horas, etc." style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            </tr>
+            <tr>
+            <td><strong>Estado</strong></td>
+            <td>
+                <select style="border: none; width: 100%; background: transparent;">
+                <option value="pendiente">Pendiente</option>
+                <option value="en-progreso">En progreso</option>
+                <option value="completada">Completada</option>
+                </select>
+            </td>
+            </tr>
+        </tbody>
+        </table>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Descripción de la Historia</label>
+            <textarea placeholder="Como [rol], quiero [acción/funcionalidad] para [beneficio/resultado]"></textarea>
+        </div>
+        </div>
+
+        <div class="table-controls">
+        <h3 class="table-title">Criterios de Aceptación</h3>
+        <div>
+            <button class="simple-add-row" onclick="addRow('userstory-criteria-table')" data-tooltip="Añadir criterio">+</button>
+            <button class="simple-remove-row" onclick="removeRow('userstory-criteria-table')" data-tooltip="Eliminar criterio">-</button>
+        </div>
+        </div>
+        <table id="userstory-criteria-table">
+        <thead>
+            <tr>
+            <th width="50px">Estado</th>
+            <th>Criterio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td style="text-align: center;">
+                <input type="checkbox" style="transform: scale(1.2);">
+            </td>
+            <td><input type="text" placeholder="Criterio de aceptación" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            </tr>
+            <tr>
+            <td style="text-align: center;">
+                <input type="checkbox" style="transform: scale(1.2);">
+            </td>
+            <td><input type="text" placeholder="Criterio de aceptación" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <div class="table-controls">
+        <h3 class="table-title">Dependencias</h3>
+        <div>
+            <button class="simple-add-row" onclick="addRow('userstory-dependencies-table')" data-tooltip="Añadir dependencia">+</button>
+            <button class="simple-remove-row" onclick="removeRow('userstory-dependencies-table')" data-tooltip="Eliminar dependencia">-</button>
+        </div>
+        </div>
+        <table id="userstory-dependencies-table">
+        <thead>
+            <tr>
+            <th>Dependencia</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td><input type="text" placeholder="Dependencia con otra historia, módulo, equipo o recurso" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Recursos Adjuntos</label>
+            <div class="evidence-upload" id="userstory-resources-container">
+            <input type="file" id="userstory-resources" accept="image/*,.pdf,.doc,.docx" multiple onchange="previewUserStoryFiles(this)">
+            <label class="evidence-label" for="userstory-resources" id="userstory-resources-label">
+                <i class="fas fa-cloud-upload-alt"></i> Subir Mockups, Diagramas, Documentos
+            </label>
+            <div id="userstory-files-list" style="margin-top: 10px;"></div>
+            </div>
+        </div>
+        </div>
+
+        <div class="btn-container">
+            <button class="btn btn-print" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir
+            </button>
+            <button class="btn btn-capture" onclick="captureTemplate('daily-template')">
+                <i class="fas fa-camera"></i> Capturar como imagen
+            </button>
+            <button class="btn btn-back" onclick="hideTemplates()">
+                <i class="fas fa-arrow-left"></i> Volver al inicio
+            </button>
+            <button class="btn btn-markdown" onclick="exportToMarkdown('daily-template')">
+                <i class="fab fa-markdown"></i> Exportar a Markdown
+            </button>
+        </div>
+    </div>
+    </div>
+
+<!-- Bug Log Template -->
+    <div id="bug-log-template" class="template-container">
+    <div class="watermark">BUG LOG</div>
+    <div class="template-header" style="background: linear-gradient(135deg, var(--bug-log) 0%, #b91c1c 100%);">
+        <div class="template-icon">
+        <i class="fas fa-bug"></i>
+        </div>
+        <div class="title-container">
+        <div class="template-title">Bug Log</div>
+        <div class="template-subtitle">(Registro de Errores)</div>
+        </div>
+    </div>
+    <div class="template-content">
+        <div class="table-controls">
+        <h3 class="table-title">Información del Bug</h3>
+        </div>
+        <table>
+        <thead>
+            <tr>
+            <th>Campo</th>
+            <th>Detalle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td><strong>ID del Bug</strong></td>
+            <td><input type="text" placeholder="BUG-001, BUG-002, etc." style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            </tr>
+            <tr>
+            <td><strong>Título / Resumen</strong></td>
+            <td><input type="text" placeholder="Breve descripción del problema" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            </tr>
+            <tr>
+            <td><strong>Prioridad</strong></td>
+            <td>
+                <select style="border: none; width: 100%; background: transparent;">
+                <option value="alta">Alta</option>
+                <option value="media">Media</option>
+                <option value="baja">Baja</option>
+                </select>
+            </td>
+            </tr>
+            <tr>
+            <td><strong>Severidad</strong></td>
+            <td>
+                <select style="border: none; width: 100%; background: transparent;">
+                <option value="critico">Crítico</option>
+                <option value="mayor">Mayor</option>
+                <option value="menor">Menor</option>
+                </select>
+            </td>
+            </tr>
+            <tr>
+            <td><strong>Estado</strong></td>
+            <td>
+                <select style="border: none; width: 100%; background: transparent;">
+                <option value="nuevo">Nuevo</option>
+                <option value="en-progreso">En progreso</option>
+                <option value="resuelto">Resuelto</option>
+                <option value="cerrado">Cerrado</option>
+                </select>
+            </td>
+            </tr>
+            <tr>
+            <td><strong>Fecha de Reporte</strong></td>
+            <td><input type="text" class="flatpickr-input" placeholder="Seleccione fecha" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            </tr>
+            <tr>
+            <td><strong>Responsable Asignado</strong></td>
+            <td><input type="text" placeholder="Nombre del desarrollador o equipo" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Descripción del Bug</label>
+            <textarea placeholder="Explicación detallada del error, pasos para reproducirlo y contexto donde ocurre"></textarea>
+        </div>
+        </div>
+
+        <div class="table-controls">
+        <h3 class="table-title">Pasos para Reproducir</h3>
+        <div>
+            <button class="simple-add-row" onclick="addRow('bug-steps-table')" data-tooltip="Añadir paso">+</button>
+            <button class="simple-remove-row" onclick="removeRow('bug-steps-table')" data-tooltip="Eliminar paso">-</button>
+        </div>
+        </div>
+        <table id="bug-steps-table">
+        <thead>
+            <tr>
+            <th width="80px">Paso</th>
+            <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td><input type="text" value="1" readonly style="border: none; width: 100%; background: transparent; padding: 5px; text-align: center; font-weight: bold;"></td>
+            <td><input type="text" placeholder="Descripción del paso" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            </tr>
+            <tr>
+            <td><input type="text" value="2" readonly style="border: none; width: 100%; background: transparent; padding: 5px; text-align: center; font-weight: bold;"></td>
+            <td><input type="text" placeholder="Descripción del paso" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Resultado Esperado</label>
+            <textarea placeholder="Describir cómo debería comportarse el sistema / funcionalidad"></textarea>
+        </div>
+        <div class="form-item">
+            <label>Resultado Actual</label>
+            <textarea placeholder="Describir lo que realmente sucede"></textarea>
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Adjuntos / Evidencia</label>
+            <div class="evidence-upload" id="bug-evidence-container">
+            <input type="file" id="bug-evidence" accept="image/*,.txt,.log" multiple onchange="previewBugFiles(this)">
+            <label class="evidence-label" for="bug-evidence" id="bug-evidence-label">
+                <i class="fas fa-cloud-upload-alt"></i> Subir capturas, logs, videos
+            </label>
+            <div id="bug-files-list" style="margin-top: 10px;"></div>
+            </div>
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Notas Adicionales</label>
+            <textarea placeholder="Comentarios del equipo, dependencias, decisiones, posibles soluciones"></textarea>
+        </div>
+        </div>
+
+        <div class="btn-container">
+            <button class="btn btn-print" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir
+            </button>
+            <button class="btn btn-capture" onclick="captureTemplate('daily-template')">
+                <i class="fas fa-camera"></i> Capturar como imagen
+            </button>
+            <button class="btn btn-back" onclick="hideTemplates()">
+                <i class="fas fa-arrow-left"></i> Volver al inicio
+            </button>
+            <button class="btn btn-markdown" onclick="exportToMarkdown('daily-template')">
+                <i class="fab fa-markdown"></i> Exportar a Markdown
+            </button>
+        </div>
+    </div>
+    </div>
+
+<!-- Task List Template -->
+    <div id="task-list-template" class="template-container">
+    <div class="watermark">TASK LIST</div>
+    <div class="template-header" style="background: linear-gradient(135deg, var(--task-list) 0%, #7dd3fc 100%);">
+        <div class="template-icon">
+        <i class="fas fa-tasks"></i>
+        </div>
+        <div class="title-container">
+        <div class="template-title">Task List</div>
+        <div class="template-subtitle">(Lista de Tareas)</div>
+        </div>
+    </div>
+    <div class="template-content">
+        <div class="table-controls">
+        <h3 class="table-title">Información General de la Tarea</h3>
+        </div>
+        <table>
+        <thead>
+            <tr>
+            <th>Campo</th>
+            <th>Detalle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td><strong>ID de Tarea</strong></td>
+            <td><input type="text" placeholder="T-001, T-002, etc." style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            </tr>
+            <tr>
+            <td><strong>Título / Nombre</strong></td>
+            <td><input type="text" placeholder="Nombre breve de la tarea" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            </tr>
+            <tr>
+            <td><strong>Descripción</strong></td>
+            <td><textarea placeholder="Breve explicación de la tarea" style="border: none; width: 100%; min-height: 60px; resize: none; background: transparent;"></textarea></td>
+            </tr>
+            <tr>
+            <td><strong>Prioridad</strong></td>
+            <td>
+                <select style="border: none; width: 100%; background: transparent;">
+                <option value="alta">Alta</option>
+                <option value="media">Media</option>
+                <option value="baja">Baja</option>
+                </select>
+            </td>
+            </tr>
+            <tr>
+            <td><strong>Responsable</strong></td>
+            <td><input type="text" placeholder="Nombre del miembro asignado" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            </tr>
+            <tr>
+            <td><strong>Fecha de Inicio</strong></td>
+            <td><input type="text" class="flatpickr-input" placeholder="Seleccione fecha" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            </tr>
+            <tr>
+            <td><strong>Fecha de Entrega</strong></td>
+            <td><input type="text" class="flatpickr-input" placeholder="Seleccione fecha" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            </tr>
+            <tr>
+            <td><strong>Estado</strong></td>
+            <td>
+                <select style="border: none; width: 100%; background: transparent;">
+                <option value="pendiente">Pendiente</option>
+                <option value="en-progreso">En progreso</option>
+                <option value="completada">Completada</option>
+                <option value="bloqueada">Bloqueada</option>
+                </select>
+            </td>
+            </tr>
+        </tbody>
+        </table>
+
+        <div class="table-controls">
+        <h3 class="table-title">Checklist / Subtareas</h3>
+        <div>
+            <button class="simple-add-row" onclick="addRow('task-checklist-table')" data-tooltip="Añadir subtarea">+</button>
+            <button class="simple-remove-row" onclick="removeRow('task-checklist-table')" data-tooltip="Eliminar subtarea">-</button>
+        </div>
+        </div>
+        <table id="task-checklist-table">
+        <thead>
+            <tr>
+            <th>Subtarea</th>
+            <th>Descripción</th>
+            <th>Responsable</th>
+            <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td><input type="text" placeholder="Subtarea 1" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td><input type="text" placeholder="Descripción breve" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td><input type="text" placeholder="Nombre" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+            <td>
+                <select style="border: none; width: 100%; background: transparent;">
+                <option value="pendiente">Pendiente</option>
+                <option value="en-progreso">En progreso</option>
+                <option value="completada">Completada</option>
+                </select>
+            </td>
+            </tr>
+        </tbody>
+        </table>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Notas / Observaciones</label>
+            <textarea placeholder="Comentarios adicionales, bloqueos, dependencias con otras tareas, decisiones del equipo"></textarea>
+        </div>
+        </div>
+
+        <div class="form-group">
+        <div class="form-item">
+            <label>Adjuntos / Recursos</label>
+            <div class="evidence-upload" id="task-resources-container">
+            <input type="file" id="task-resources" accept="image/*,.pdf,.doc,.docx" multiple onchange="previewTaskFiles(this)">
+            <label class="evidence-label" for="task-resources" id="task-resources-label">
+                <i class="fas fa-cloud-upload-alt"></i> Subir documentos, diseños, enlaces
+            </label>
+            <div id="task-files-list" style="margin-top: 10px;"></div>
+            </div>
+        </div>
+        </div>
+
+        <div class="btn-container">
+            <button class="btn btn-print" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir
+            </button>
+            <button class="btn btn-capture" onclick="captureTemplate('daily-template')">
+                <i class="fas fa-camera"></i> Capturar como imagen
+            </button>
+            <button class="btn btn-back" onclick="hideTemplates()">
+                <i class="fas fa-arrow-left"></i> Volver al inicio
+            </button>
+            <button class="btn btn-markdown" onclick="exportToMarkdown('daily-template')">
+                <i class="fab fa-markdown"></i> Exportar a Markdown
+            </button>
+        </div>
+    </div>
+    </div>
+
+    <!-- Test Case Template -->
+<div id="test-case-template" class="template-container">
+    <div class="watermark">TEST CASE</div>
+    <div class="template-header" style="background: linear-gradient(135deg, var(--test-case) 0%, #d97706 100%);">
+        <div class="template-icon">
+            <i class="fas fa-vial"></i>
+        </div>
+        <div class="title-container">
+            <div class="template-title">Test Case</div>
+            <div class="template-subtitle">(Caso de Prueba)</div>
+        </div>
+    </div>
+
+    <div class="template-content">
+        <div class="form-group">
+            <div class="form-item">
+                <label>Responsable / QA Lead</label>
+                <input type="text" placeholder="Nombre del tester o responsable">
+            </div>
+        </div>
+
+        <div class="table-controls">
+            <h3 class="table-title">Información General del Test Case</h3>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Detalle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>ID del Test Case</strong></td>
+                    <td><input type="text" placeholder="TC-001, TC-002, etc." style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                </tr>
+                <tr>
+                    <td><strong>Título / Nombre</strong></td>
+                    <td><input type="text" placeholder="Nombre descriptivo del caso de prueba" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                </tr>
+                <tr>
+                    <td><strong>Historia de Usuario Relacionada</strong></td>
+                    <td><input type="text" placeholder="HU-01, módulo o función específica" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                </tr>
+                <tr>
+                    <td><strong>Prioridad / Severidad</strong></td>
+                    <td>
+                        <select style="border: none; width: 100%; background: transparent;">
+                            <option value="alta">Alta</option>
+                            <option value="media">Media</option>
+                            <option value="baja">Baja</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Tipo de Prueba</strong></td>
+                    <td>
+                        <select style="border: none; width: 100%; background: transparent;">
+                            <option value="funcional">Funcional</option>
+                            <option value="ui">UI</option>
+                            <option value="integracion">Integración</option>
+                            <option value="rendimiento">Rendimiento</option>
+                            <option value="seguridad">Seguridad</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Estado</strong></td>
+                    <td>
+                        <select style="border: none; width: 100%; background: transparent;">
+                            <option value="pendiente">Pendiente</option>
+                            <option value="en-progreso">En progreso</option>
+                            <option value="completada">Completada</option>
+                            <option value="fallida">Fallida</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Precondiciones</strong></td>
+                    <td><textarea placeholder="Requisitos que deben cumplirse antes de ejecutar el test" style="border: none; width: 100%; min-height: 60px; resize: none; background: transparent;"></textarea></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="table-controls">
+            <h3 class="table-title">Pasos del Test Case</h3>
+            <div>
+                <button class="simple-add-row" onclick="addRow('testcase-steps-table')" data-tooltip="Añadir paso">+</button>
+                <button class="simple-remove-row" onclick="removeRow('testcase-steps-table')" data-tooltip="Eliminar paso">-</button>
+            </div>
+        </div>
+        <table id="testcase-steps-table">
+            <thead>
+                <tr>
+                    <th width="80px">Paso</th>
+                    <th>Acción</th>
+                    <th>Entrada</th>
+                    <th>Resultado Esperado</th>
+                    <th width="120px">Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" value="1" readonly style="border: none; width: 100%; background: transparent; padding: 5px; text-align: center; font-weight: bold;"></td>
+                    <td><input type="text" placeholder="Acción a realizar" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                    <td><input type="text" placeholder="Datos de entrada" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                    <td><input type="text" placeholder="Resultado esperado" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                    <td>
+                        <select style="border: none; width: 100%; background: transparent;">
+                            <option value="pendiente">Pendiente</option>
+                            <option value="exitoso">Exitoso</option>
+                            <option value="fallido">Fallido</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="form-group">
+            <div class="form-item">
+                <label>Datos de Prueba</label>
+                <textarea placeholder="Variables, inputs o configuraciones necesarias para la prueba"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-item">
+                <label>Resultados y Evidencia</label>
+                <div class="evidence-upload" id="testcase-results-container">
+                    <input type="file" id="testcase-results" accept="image/*,.txt,.log" multiple onchange="previewTestCaseFiles(this)">
+                    <label class="evidence-label" for="testcase-results" id="testcase-results-label">
+                        <i class="fas fa-cloud-upload-alt"></i> Subir resultados, logs, capturas
+                    </label>
+                    <div id="testcase-files-list" style="margin-top: 10px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-item">
+                <label>Notas / Observaciones Adicionales</label>
+                <textarea placeholder="Comentarios del equipo de QA, bloqueos, dependencias, errores detectados, recomendaciones"></textarea>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <button class="btn btn-print" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir
+            </button>
+            <button class="btn btn-capture" onclick="captureTemplate('test-case-template')">
+                <i class="fas fa-camera"></i> Capturar como imagen
+            </button>
+            <button class="btn btn-back" onclick="hideTemplates()">
+                <i class="fas fa-arrow-left"></i> Volver al inicio
+            </button>
+            <button class="btn btn-markdown" onclick="exportToMarkdown('test-case-template')">
+                <i class="fab fa-markdown"></i> Exportar a Markdown
+            </button>
+        </div>
+    </div>
+</div>
+
+    <!-- Requirements Template -->
+    <div id="requirements-template" class="template-container">
+        <div class="watermark">REQUIREMENTS</div>
+        <div class="template-header" style="background: linear-gradient(135deg, var(--requirements) 0%, #2d2b55 100%);">
+            <div class="template-icon">
+                <i class="fas fa-file-alt"></i>
+            </div>
+            <div class="title-container">
+                <div class="template-title">Requirements</div>
+                <div class="template-subtitle">(Requisitos del Sistema)</div>
+            </div>
+        </div>
+        <div class="template-content">
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Proyecto</label>
+                    <input type="text" placeholder="Nombre del proyecto">
+                </div>
+                <div class="form-item">
+                    <label>Versión</label>
+                    <input type="text" placeholder="Versión del documento">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Fecha de Creación</label>
+                    <input type="text" class="flatpickr-input" placeholder="Seleccione fecha">
+                </div>
+                <div class="form-item">
+                    <label>Responsable</label>
+                    <input type="text" placeholder="Nombre del responsable">
+                </div>
+            </div>
+            
+            <div class="table-controls">
+                <h3 class="table-title">Requisitos Funcionales</h3>
+                <div>
+                    <button class="simple-add-row" onclick="addRow('requirements-func-table')">+</button>
+                    <button class="simple-remove-row" onclick="removeRow('requirements-func-table')">-</button>
+                </div>
+            </div>
+            <table id="requirements-func-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Requisito</th>
+                        <th>Descripción</th>
+                        <th>Prioridad</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder="RF-001"></td>
+                        <td><textarea placeholder="Descripción corta"></textarea></td>
+                        <td><textarea placeholder="Descripción detallada"></textarea></td>
+                        <td>
+                            <select>
+                                <option value="alta">Alta</option>
+                                <option value="media">Media</option>
+                                <option value="baja">Baja</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select>
+                                <option value="pendiente">Pendiente</option>
+                                <option value="desarrollo">En Desarrollo</option>
+                                <option value="completado">Completado</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="btn-container">
+                <button class="btn btn-print" onclick="window.print()">
+                    <i class="fas fa-print"></i> Imprimir
+                </button>
+                <button class="btn btn-capture" onclick="captureTemplate('requirements-template')">
+                    <i class="fas fa-camera"></i> Capturar
+                </button>
+                <button class="btn btn-markdown" onclick="exportToMarkdown('requirements-template')">
+                    <i class="fab fa-markdown"></i> Markdown
+                </button>
+                <button class="btn btn-back" onclick="hideTemplates()">
+                    <i class="fas fa-arrow-left"></i> Volver
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Traceability Matrix Template -->
+    <div id="traceability-template" class="template-container">
+        <div class="watermark">TRACEABILITY</div>
+        <div class="template-header" style="background: linear-gradient(135deg, var(--traceability-matrix) 0%, #9c5d33 100%);">
+            <div class="template-icon">
+                <i class="fas fa-project-diagram"></i>
+            </div>
+            <div class="title-container">
+                <div class="template-title">Traceability Matrix</div>
+                <div class="template-subtitle">(Matriz de Trazabilidad)</div>
+            </div>
+        </div>
+        
+        <div class="template-content">
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Proyecto / Producto</label>
+                    <input type="text" placeholder="Nombre del proyecto">
+                </div>
+                <div class="form-item">
+                    <label>Responsable / Analista de Requerimientos</label>
+                    <input type="text" placeholder="Nombre del responsable">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Fecha de Creación</label>
+                    <input type="text" class="flatpickr-input" placeholder="Seleccione fecha" data-input>
+                </div>
+                <div class="form-item">
+                    <label>Última Actualización</label>
+                    <input type="text" class="flatpickr-input" placeholder="Seleccione fecha" data-input>
+                </div>
+            </div>
+
+            <!-- Matriz de Trazabilidad -->
+            <div class="table-controls">
+                <h3 class="table-title">Matriz de Trazabilidad</h3>
+                <div>
+                    <button class="simple-add-row" onclick="addRow('traceability-table')" data-tooltip="Añadir fila">+</button>
+                    <button class="simple-remove-row" onclick="removeRow('traceability-table')" data-tooltip="Eliminar fila">-</button>
+                </div>
+            </div>
+            
+            <table id="traceability-table">
+                <thead>
+                    <tr>
+                        <th width="120px">ID Requisito</th>
+                        <th width="120px">Tipo</th>
+                        <th>Descripción del Requisito</th>
+                        <th width="150px">Historia de Usuario Relacionada</th>
+                        <th width="150px">Caso de Prueba / Test Case</th>
+                        <th width="120px">Estado del Requisito</th>
+                        <th width="120px">Estado de Prueba</th>
+                        <th>Observaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder="REQ-001" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td>
+                            <select style="border: none; width: 100%; background: transparent;">
+                                <option value="Funcional">Funcional</option>
+                                <option value="No Funcional">No Funcional</option>
+                            </select>
+                        </td>
+                        <td><textarea placeholder="Descripción del requisito" style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                        <td><input type="text" placeholder="HU-01" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><input type="text" placeholder="TC-01" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td>
+                            <select style="border: none; width: 100%; background: transparent;">
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="En progreso">En progreso</option>
+                                <option value="Completado">Completado</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select style="border: none; width: 100%; background: transparent;">
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="Exitoso">Exitoso</option>
+                                <option value="Fallido">Fallido</option>
+                            </select>
+                        </td>
+                        <td><textarea placeholder="Notas adicionales" style="border: none; width: 100%; min-height: 80px; resize: none; background: transparent;"></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Notas Adicionales</label>
+                    <textarea placeholder="Comentarios generales sobre cobertura de requerimientos, decisiones de QA, dependencias, riesgos o cambios en el alcance"></textarea>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <button class="btn btn-print" onclick="window.print()">
+                    <i class="fas fa-print"></i> Imprimir
+                </button>
+                <button class="btn btn-capture" onclick="captureTemplate('traceability-template')">
+                    <i class="fas fa-camera"></i> Capturar como imagen
+                </button>
+                <button class="btn btn-back" onclick="hideTemplates()">
+                    <i class="fas fa-arrow-left"></i> Volver al inicio
+                </button>
+                <button class="btn btn-markdown" onclick="exportToMarkdown('traceability-template')">
+                    <i class="fab fa-markdown"></i> Exportar a Markdown
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Planning Poker Template -->
+    <div id="planning-poker-template" class="template-container">
+        <div class="watermark">POKER</div>
+        <div class="template-header" style="background: linear-gradient(135deg, var(--planning-poker) 0%, #4ae0b8 100%);">
+            <div class="template-icon">
+                <i class="fas fa-dice"></i>
+            </div>
+            <div class="title-container">
+                <div class="template-title">Planning Poker</div>
+                <div class="template-subtitle">(Estimación Colaborativa)</div>
+            </div>
+        </div>
+        
+        <div class="template-content">
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Proyecto / Producto</label>
+                    <input type="text" placeholder="Nombre del proyecto">
+                </div>
+                <div class="form-item">
+                    <label>Sprint / Iteración</label>
+                    <input type="text" placeholder="Número y fechas del sprint">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Facilitador / Scrum Master</label>
+                    <input type="text" placeholder="Nombre del facilitador">
+                </div>
+                <div class="form-item">
+                    <label>Fecha de la Sesión</label>
+                    <input type="text" class="flatpickr-input" placeholder="Seleccione fecha" data-input>
+                </div>
+            </div>
+
+            <!-- Tabla de Estimación -->
+            <div class="table-controls">
+                <h3 class="table-title">Tabla de Estimación de Historias de Usuario</h3>
+                <div>
+                    <button class="simple-add-row" onclick="addRow('poker-table')" data-tooltip="Añadir historia">+</button>
+                    <button class="simple-remove-row" onclick="removeRow('poker-table')" data-tooltip="Eliminar historia">-</button>
+                </div>
+            </div>
+            
+            <table id="poker-table">
+                <thead>
+                    <tr>
+                        <th width="100px">ID Historia</th>
+                        <th>Título de la Historia</th>
+                        <th>Descripción Breve</th>
+                        <th width="80px">Miembro 1</th>
+                        <th width="80px">Miembro 2</th>
+                        <th width="80px">Miembro 3</th>
+                        <th width="80px">Miembro 4</th>
+                        <th width="80px">Miembro 5</th>
+                        <th width="100px">Estimación Final</th>
+                        <th>Observaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder="HU-01" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><input type="text" placeholder="Nombre breve" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><textarea placeholder="Resumen de la historia" style="border: none; width: 100%; min-height: 60px; resize: none; background: transparent;"></textarea></td>
+                        <td><input type="text" placeholder="1,2,3,5,8…" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><input type="text" placeholder="1,2,3,5,8…" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><input type="text" placeholder="1,2,3,5,8…" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><input type="text" placeholder="1,2,3,5,8…" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><input type="text" placeholder="1,2,3,5,8…" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><input type="text" placeholder="Valor acordado" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><textarea placeholder="Notas, dudas, aclaraciones" style="border: none; width: 100%; min-height: 60px; resize: none; background: transparent;"></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Notas Adicionales</label>
+                    <textarea placeholder="Comentarios del equipo, decisiones sobre complejidad, referencias a criterios de aceptación o dependencias"></textarea>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <button class="btn btn-print" onclick="window.print()">
+                    <i class="fas fa-print"></i> Imprimir
+                </button>
+                <button class="btn btn-capture" onclick="captureTemplate('planning-poker-template')">
+                    <i class="fas fa-camera"></i> Capturar como imagen
+                </button>
+                <button class="btn btn-back" onclick="hideTemplates()">
+                    <i class="fas fa-arrow-left"></i> Volver al inicio
+                </button>
+                <button class="btn btn-markdown" onclick="exportToMarkdown('planning-poker-template')">
+                    <i class="fab fa-markdown"></i> Exportar a Markdown
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Request Template -->
+    <div id="change-request-template" class="template-container">
+        <div class="watermark">CHANGE</div>
+        <div class="template-header" style="background: linear-gradient(135deg, var(--change-request) 0%, #ffd4e4 100%);">
+            <div class="template-icon">
+                <i class="fas fa-exchange-alt"></i>
+            </div>
+            <div class="title-container">
+                <div class="template-title">Change Request</div>
+                <div class="template-subtitle">(Solicitud de Cambio)</div>
+            </div>
+        </div>
+        
+        <div class="template-content">
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Proyecto / Producto</label>
+                    <input type="text" placeholder="Nombre del proyecto">
+                </div>
+                <div class="form-item">
+                    <label>Solicitante</label>
+                    <input type="text" placeholder="Nombre de la persona o equipo">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Responsable / Evaluador</label>
+                    <input type="text" placeholder="Project Manager / Product Owner">
+                </div>
+                <div class="form-item">
+                    <label>Fecha de Solicitud</label>
+                    <input type="text" class="flatpickr-input" placeholder="Seleccione fecha" data-input>
+                </div>
+            </div>
+
+            <!-- Información General -->
+            <div class="table-controls">
+                <h3 class="table-title">Información General del Cambio</h3>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th width="200px">Campo</th>
+                        <th>Detalle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>ID del Cambio</strong></td>
+                        <td><input type="text" placeholder="CR-001, CR-002, etc." style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Título / Nombre</strong></td>
+                        <td><input type="text" placeholder="Breve descripción del cambio" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tipo de Cambio</strong></td>
+                        <td>
+                            <select style="border: none; width: 100%; background: transparent;">
+                                <option value="">Seleccionar</option>
+                                <option value="Funcional">Funcional</option>
+                                <option value="No Funcional">No Funcional</option>
+                                <option value="Técnico">Técnico</option>
+                                <option value="Proceso">Proceso</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Prioridad</strong></td>
+                        <td>
+                            <select style="border: none; width: 100%; background: transparent;">
+                                <option value="">Seleccionar</option>
+                                <option value="Alta">Alta</option>
+                                <option value="Media">Media</option>
+                                <option value="Baja">Baja</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Estado</strong></td>
+                        <td>
+                            <select style="border: none; width: 100%; background: transparent;">
+                                <option value="">Seleccionar</option>
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="Aprobado">Aprobado</option>
+                                <option value="Rechazado">Rechazado</option>
+                                <option value="Implementado">Implementado</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Requisito Afectado</strong></td>
+                        <td><input type="text" placeholder="ID o nombre del requisito impactado" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Responsable de Implementación</strong></td>
+                        <td><input type="text" placeholder="Nombre de la persona encargada" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fecha Estimada de Implementación</strong></td>
+                        <td><input type="text" class="flatpickr-input" placeholder="Seleccione fecha" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Descripción y Justificación del Cambio</label>
+                    <textarea placeholder="Detalles, alcance, motivación y justificación del cambio"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Impacto del Cambio</label>
+                    <textarea placeholder="Áreas afectadas, recursos requeridos, riesgos asociados, resultados esperados"></textarea>
+                </div>
+            </div>
+
+            <!-- Aprobaciones -->
+            <div class="table-controls">
+                <h3 class="table-title">Aprobaciones</h3>
+                <div>
+                    <button class="simple-add-row" onclick="addRow('approvals-table')" data-tooltip="Añadir aprobador">+</button>
+                    <button class="simple-remove-row" onclick="removeRow('approvals-table')" data-tooltip="Eliminar aprobador">-</button>
+                </div>
+            </div>
+            
+            <table id="approvals-table">
+                <thead>
+                    <tr>
+                        <th>Nombre / Rol</th>
+                        <th width="150px">Firma / Confirmación</th>
+                        <th width="120px">Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder="Project Manager" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><input type="text" placeholder="Confirmación" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><input type="text" class="flatpickr-input" placeholder="Seleccione fecha" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Notas Adicionales / Comentarios</label>
+                    <textarea placeholder="Observaciones extra, decisiones del equipo, referencias a documentos o reuniones relacionadas"></textarea>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <button class="btn btn-print" onclick="window.print()">
+                    <i class="fas fa-print"></i> Imprimir
+                </button>
+                <button class="btn btn-capture" onclick="captureTemplate('change-request-template')">
+                    <i class="fas fa-camera"></i> Capturar como imagen
+                </button>
+                <button class="btn btn-back" onclick="hideTemplates()">
+                    <i class="fas fa-arrow-left"></i> Volver al inicio
+                </button>
+                <button class="btn btn-markdown" onclick="exportToMarkdown('change-request-template')">
+                    <i class="fab fa-markdown"></i> Exportar a Markdown
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Architecture Decision Record Template -->
+    <div id="architecture-decision-template" class="template-container">
+        <div class="watermark">ADR</div>
+        <div class="template-header" style="background: linear-gradient(135deg, var(--architecture-decision) 0%, #ff6b6b 100%);">
+            <div class="template-icon">
+                <i class="fas fa-cubes"></i>
+            </div>
+            <div class="title-container">
+                <div class="template-title">Architecture Decision Record</div>
+                <div class="template-subtitle">(Registro de Decisión Arquitectónica)</div>
+            </div>
+        </div>
+        
+        <div class="template-content">
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Proyecto / Producto</label>
+                    <input type="text" placeholder="Nombre del proyecto">
+                </div>
+                <div class="form-item">
+                    <label>Responsable / Arquitecto</label>
+                    <input type="text" placeholder="Nombre del responsable">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-item">
+                    <label>Fecha de Creación</label>
+                    <input type="text" class="flatpickr-input" placeholder="Seleccione fecha" data-input>
+                </div>
+                <div class="form-item">
+                    <label>Última Actualización</label>
+                    <input type="text" class="flatpickr-input" placeholder="Seleccione fecha" data-input>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-item">
+                    <label>ID del ADR</label>
+                    <input type="text" placeholder="ADR-001, ADR-002, etc.">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-item">
+                    <label>1. Título de la Decisión</label>
+                    <input type="text" placeholder="Breve título descriptivo de la decisión arquitectónica tomada">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-item">
+                    <label>2. Autores / Problema</label>
+                    <textarea placeholder="Autores: [Nombre(s) de los responsables]&#10;Problema / Contexto: [Descripción del problema, necesidades o antecedentes]"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-item">
+                    <label>3. Decisión</label>
+                    <textarea placeholder="Descripción clara de la decisión tomada, cómo se aplicará y por qué"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-item">
+                    <label>4. Supuestos y Restricciones</label>
+                    <textarea placeholder="Supuestos: [Condiciones asumidas]&#10;Restricciones: [Limitaciones o condiciones que afectan la decisión]"></textarea>
+                </div>
+            </div>
+
+            <!-- Alternativas -->
+            <div class="table-controls">
+                <h3 class="table-title">5. Posiciones o Alternativas</h3>
+                <div>
+                    <button class="simple-add-row" onclick="addRow('alternatives-table')" data-tooltip="Añadir alternativa">+</button>
+                    <button class="simple-remove-row" onclick="removeRow('alternatives-table')" data-tooltip="Eliminar alternativa">-</button>
+                </div>
+            </div>
+            
+            <table id="alternatives-table">
+                <thead>
+                    <tr>
+                        <th>Alternativa</th>
+                        <th>Pros</th>
+                        <th>Contras</th>
+                        <th>Motivo de Rechazo / Selección</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder="Alternativa 1" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><textarea placeholder="Ventajas" style="border: none; width: 100%; min-height: 60px; resize: none; background: transparent;"></textarea></td>
+                        <td><textarea placeholder="Desventajas" style="border: none; width: 100%; min-height: 60px; resize: none; background: transparent;"></textarea></td>
+                        <td><textarea placeholder="Razón" style="border: none; width: 100%; min-height: 60px; resize: none; background: transparent;"></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="form-group">
+                <div class="form-item">
+                    <label>6. Consecuencias / Impacto</label>
+                    <textarea placeholder="Impacto en arquitectura, desarrollo, mantenimiento, rendimiento, seguridad. Dependencias con otros módulos o decisiones."></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-item">
+                    <label>7. Argumento e Implicaciones</label>
+                    <textarea placeholder="Razonamiento detrás de la decisión. Implicaciones técnicas, de negocio o de equipo."></textarea>
+                </div>
+            </div>
+
+            <!-- Relacionados -->
+            <div class="table-controls">
+                <h3 class="table-title">8. Relacionados</h3>
+                <div>
+                    <button class="simple-add-row" onclick="addRow('related-table')" data-tooltip="Añadir relación">+</button>
+                    <button class="simple-remove-row" onclick="removeRow('related-table')" data-tooltip="Eliminar relación">-</button>
+                </div>
+            </div>
+            
+            <table id="related-table">
+                <thead>
+                    <tr>
+                        <th width="150px">Item</th>
+                        <th width="120px">Tipo</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder="Item relacionado" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td>
+                            <select style="border: none; width: 100%; background: transparent;">
+                                <option value="Documento">Documento</option>
+                                <option value="Decisión">Decisión</option>
+                                <option value="Módulo">Módulo</option>
+                                <option value="Requisito">Requisito</option>
+                            </select>
+                        </td>
+                        <td><textarea placeholder="Descripción de la relación" style="border: none; width: 100%; min-height: 60px; resize: none; background: transparent;"></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Estado del ADR -->
+            <div class="table-controls">
+                <h3 class="table-title">9. Estado del ADR</h3>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th width="150px">Estado</th>
+                        <th width="120px">Fecha</th>
+                        <th>Observaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <select style="border: none; width: 100%; background: transparent;">
+                                <option value="Propuesta">Propuesta</option>
+                                <option value="Revisada">Revisada</option>
+                                <option value="Aprobada">Aprobada</option>
+                                <option value="Rechazada">Rechazada</option>
+                            </select>
+                        </td>
+                        <td><input type="text" class="flatpickr-input" placeholder="Seleccione fecha" style="border: none; width: 100%; background: transparent; padding: 5px;"></td>
+                        <td><textarea placeholder="Comentarios sobre la implementación o seguimiento" style="border: none; width: 100%; min-height: 60px; resize: none; background: transparent;"></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="form-group">
+                <div class="form-item">
+                    <label>10. Referencias</label>
+                    <textarea placeholder="Documentos, diagramas, enlaces o recursos utilizados"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-item">
+                    <label>11. Notas Adicionales</label>
+                    <textarea placeholder="Comentarios extra del equipo, riesgos, revisiones futuras, decisiones relacionadas"></textarea>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <button class="btn btn-print" onclick="window.print()">
+                    <i class="fas fa-print"></i> Imprimir
+                </button>
+                <button class="btn btn-capture" onclick="captureTemplate('architecture-decision-template')">
+                    <i class="fas fa-camera"></i> Capturar como imagen
+                </button>
+                <button class="btn btn-back" onclick="hideTemplates()">
+                    <i class="fas fa-arrow-left"></i> Volver al inicio
+                </button>
+                <button class="btn btn-markdown" onclick="exportToMarkdown('architecture-decision-template')">
+                    <i class="fab fa-markdown"></i> Exportar a Markdown
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

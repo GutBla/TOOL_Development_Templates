@@ -1,0 +1,1396 @@
+/* ============================================= */
+/* VARIABLES CSS */
+/* ============================================= */
+:root {
+    /* Colores principales */
+    --main-blue: #3a60d2;
+    
+    /* Colores de plantillas */
+    --daily-standup: #ffd141;
+    --sprint-planning: #ff6666;
+    --sprint-review: #00aac3;
+    --sprint-retro: #8a8cf6;
+    --product-backlog: #3d3f54;
+    --sprint-backlog: #D3DAD9;
+    --spikes: #FF9013;
+    --demo: #7ec71e;
+    --roadmap: #E45A92;
+    --definition-done: #06923E;
+    --definition-ready: #33A1E0;
+    --user-stories: #134686;
+    --bug-log: #8A0000;
+    --task-list: #8CCDEB;
+    --test-case: #FEB21A;
+    --requirements: #19183B;
+    --traceability-matrix: #7B4019;
+    --planning-poker: #1DCD9F;
+    --change-request: #FFC1DA;
+    --architecture-decision: #F93827;
+    
+    /* Colores de estado */
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
+    --info: #3b82f6;
+    
+    /* Colores neutros */
+    --white: #ffffff;
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-500: #64748b;
+    --gray-700: #334155;
+    --gray-900: #1e293b;
+    --black: #000000;
+}
+
+/* ============================================= */
+/* RESET Y ESTILOS BASE */
+/* ============================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--main-blue);
+    color: var(--white);
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: 
+        linear-gradient(rgba(58, 96, 210, 0.85), rgba(58, 96, 210, 0.9)),
+        url('assets/img/Background_patron_brick.png');
+}
+
+/* ============================================= */
+/* COMPONENTES PRINCIPALES */
+/* ============================================= */
+
+/* Header y Hero Section */
+.header {
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1000px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-container h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 11rem;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    line-height: 0.9;
+}
+
+.hero-description {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero {
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+    font-weight: 400;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2.5rem;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    opacity: 0.8;
+    font-size: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ============================================= */
+/* COMPONENTES DE CARRUSEL */
+/* ============================================= */
+.carousel-container {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    padding: 1rem 0;
+}
+
+/* Tarjetas del Carrusel */
+.card {
+    display: inline-block;
+    position: relative;
+    width: 380px;
+    min-width: 380px;
+    height: 500px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 8px 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card-image {
+    height: 65%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.card-title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    max-width: 70%;
+    color: var(--white);
+    padding: 8px 15px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.card-background {
+    border-radius: 30px;
+    position: absolute;
+    top: 55%;
+    left: -5px;
+    height: 65%;
+    width: 108%;
+    transform: skew(19deg, -9deg);
+}
+
+.card-icon {
+    position: absolute;
+    top: 52%;
+    right: 30px;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 30px 20px 20px;
+    text-align: left;
+    z-index: 5;
+}
+
+.card-description {
+    font-size: 1rem;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    padding-right: 100px;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 10px 25px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Navegación del Carrusel */
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: var(--white);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 5;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+/* ============================================= */
+/* PLANTILLAS EDITABLES */
+/* ============================================= */
+.template-container {
+    display: none;
+    max-width: 1000px;
+    margin: 0 auto 50px;
+    padding: 0;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.7);
+    page-break-after: always;
+    color: var(--gray-900);
+}
+
+.template-header {
+    padding: 45px 45px 30px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    position: relative;
+}
+
+.template-icon {
+    font-size: 2.8rem;
+    width: 85px;
+    height: 85px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.2);
+    flex-shrink: 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    backdrop-filter: blur(10px);
+}
+
+.title-container {
+    flex-grow: 1;
+}
+
+.template-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    letter-spacing: -0.5px;
+}
+
+.template-subtitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.template-content {
+    padding: 45px;
+}
+
+.watermark {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    opacity: 0.03;
+    font-size: 12rem;
+    font-weight: 800;
+    pointer-events: none;
+    z-index: 0;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+}
+
+/* ============================================= */
+/* COMPONENTES DE FORMULARIO CON LÍMITES DE ANCHO */
+/* ============================================= */
+.form-group {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.form-item {
+    flex: 1 1 320px;
+    min-width: 280px;
+}
+
+.form-item label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: var(--gray-900);
+    font-size: 1.05rem;
+}
+
+/* Campos de formulario con límites de ancho */
+.form-item input,
+.form-item textarea,
+.form-item select,
+.form-item .datetime-input {
+    width: 100%;
+    max-width: 100%;
+    padding: 16px 20px;
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    font-size: 1.05rem;
+    background: var(--gray-50);
+    transition: all 0.3s ease;
+    min-height: auto;
+    resize: vertical;
+}
+
+/* Específico para inputs en tablas - LÍMITES DE ANCHO */
+table input,
+table textarea,
+table select {
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    background: transparent;
+    padding: 8px 12px;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 40px;
+}
+
+/* Límites específicos para diferentes tipos de campos en tablas */
+table td:nth-child(1) input,  /* Primera columna - más estrecha */
+table td:nth-child(1) textarea,
+table td:nth-child(1) select {
+    max-width: 200px;
+    min-width: 120px;
+}
+
+table td:nth-child(2) input,  /* Segunda columna - media */
+table td:nth-child(2) textarea,
+table td:nth-child(2) select {
+    max-width: 300px;
+    min-width: 200px;
+}
+
+table td:nth-child(3) input,  /* Tercera columna - más ancha */
+table td:nth-child(3) textarea,
+table td:nth-child(3) select {
+    max-width: 400px;
+    min-width: 250px;
+}
+
+/* Columnas específicas para tablas de Daily Stand-up */
+#daily-table td:nth-child(1) input { /* Columna Miembro */
+    max-width: 180px;
+    min-width: 120px;
+}
+
+#daily-table td:nth-child(2) textarea, /* Columnas de texto largo */
+#daily-table td:nth-child(3) textarea,
+#daily-table td:nth-child(4) textarea {
+    max-width: 100%;
+    min-width: 200px;
+    min-height: 100px;
+}
+
+/* Asegurar que los textareas se expandan verticalmente */
+.form-item textarea,
+table textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.6;
+    overflow-y: auto;
+}
+
+/* Inputs específicos para números con ancho limitado */
+input[type="number"] {
+    max-width: 120px;
+    min-width: 80px;
+}
+
+/* Selects con ancho limitado */
+.form-item select,
+table select {
+    max-width: 100%;
+}
+
+.datetime-input {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 100%;
+}
+
+.datetime-input input {
+    border: none;
+    background: transparent;
+    padding: 0;
+    flex: 1;
+    max-width: 100%;
+}
+
+.form-item input:focus,
+.form-item textarea:focus,
+.form-item select:focus,
+.datetime-input:focus-within,
+table input:focus,
+table textarea:focus,
+table select:focus {
+    outline: none;
+    border-color: var(--info);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    background: var(--white);
+}
+
+.flatpickr-input {
+    background: transparent;
+    border: none;
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.05rem;
+    padding: 0;
+}
+
+/* ============================================= */
+/* COMPONENTES DE TABLA CON LÍMITES DE ANCHO */
+/* ============================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    overflow: hidden;
+    table-layout: fixed; /* Cambiado a fixed para mejor control */
+}
+
+th, td {
+    border: 1px solid var(--gray-200);
+    padding: 12px 16px;
+    text-align: left;
+    vertical-align: top;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Anchos específicos para columnas de tablas comunes */
+th:nth-child(1),
+td:nth-child(1) {
+    width: 20%;
+    max-width: 200px;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+    width: 25%;
+    max-width: 250px;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+    width: 30%;
+    max-width: 300px;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+    width: 25%;
+    max-width: 250px;
+}
+
+/* Tablas con 5 columnas */
+th:nth-child(5),
+td:nth-child(5) {
+    width: 20%;
+    max-width: 200px;
+}
+
+/* Tablas con 6 columnas */
+th:nth-child(6),
+td:nth-child(6) {
+    width: 15%;
+    max-width: 150px;
+}
+
+th {
+    background-color: var(--gray-100);
+    font-weight: 700;
+    color: var(--gray-900);
+    font-size: 1.05rem;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: var(--gray-100);
+}
+
+.total-row td {
+    text-align: right;
+    padding-right: 30px;
+}
+
+/* Controles de Tabla */
+.table-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.table-title {
+    margin: 0;
+    color: var(--gray-900);
+}
+
+.table-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.row-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* ============================================= */
+/* COMPONENTES DE BOTÓN */
+/* ============================================= */
+.btn-container {
+    text-align: center;
+    margin-top: 45px;
+    padding-bottom: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 16px 28px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    max-width: 100%;
+}
+
+.btn-print {
+    background: var(--info);
+    color: var(--white);
+}
+
+.btn-capture {
+    background: var(--success);
+    color: var(--white);
+}
+
+.btn-back {
+    background: var(--error);
+    color: var(--white);
+}
+
+.btn-markdown {
+    background: var(--gray-700);
+    color: var(--white);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Botones de Acción Pequeños */
+.simple-add-row,
+.simple-remove-row,
+.icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 5px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+    position: relative;
+    max-width: 100%;
+}
+
+.simple-add-row {
+    background: #8b5cf6;
+    color: var(--white);
+}
+
+.simple-remove-row {
+    background: var(--error);
+    color: var(--white);
+    margin: 5px 0 5px 10px;
+}
+
+.icon-btn {
+    background: #8b5cf6;
+    color: var(--white);
+}
+
+.simple-add-row:hover {
+    transform: scale(1.05);
+    background: #7c3aed;
+}
+
+.simple-remove-row:hover {
+    transform: scale(1.05);
+    background: #dc2626;
+}
+
+.icon-btn:hover {
+    transform: scale(1.05);
+    background: #7c3aed;
+}
+
+/* Tooltips */
+.simple-add-row::after,
+.simple-remove-row::after,
+.icon-btn::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 100;
+}
+
+.simple-add-row:hover::after,
+.simple-remove-row:hover::after,
+.icon-btn:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ============================================= */
+/* COMPONENTES DE INTERFAZ ESPECIALES */
+/* ============================================= */
+
+/* Notificaciones */
+.notification {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    padding: 18px 28px;
+    background: var(--success);
+    color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    gap: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    max-width: 400px;
+}
+
+/* Opciones de Estado */
+.status-options {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.status-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+}
+
+/* Subida de Archivos */
+.evidence-upload {
+    border: 2px dashed var(--gray-200);
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    background: var(--gray-50);
+    transition: all 0.3s ease;
+    position: relative;
+    max-width: 100%;
+}
+
+.evidence-upload:hover {
+    border-color: var(--info);
+    background: #f0f9ff;
+}
+
+.evidence-preview {
+    max-width: 100%;
+    margin-top: 15px;
+    display: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    max-height: 300px;
+    object-fit: contain;
+    margin: 15px auto;
+}
+
+.evidence-label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: var(--gray-900);
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.remove-image-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--error);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: none;
+}
+
+.remove-image-btn:hover {
+    background: #dc2626;
+}
+
+/* Select con iconos */
+select option[data-icon] {
+    padding-left: 25px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+/* ============================================= */
+/* ESTILOS ESPECÍFICOS PARA TEMAS CLAROS */
+/* ============================================= */
+.light-background .card-description,
+.light-background .card-button {
+    color: #333;
+}
+
+.light-background .card-button {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.light-background .card-button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.light-background .card-icon {
+    color: #333;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* ============================================= */
+/* COMPONENTES ESPECÍFICOS DE ROADMAP */
+/* ============================================= */
+.roadmap-chart-container {
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 20px;
+    background: var(--white);
+    margin-top: 10px;
+    max-width: 100%;
+}
+
+.roadmap-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.roadmap-chart {
+    width: 100%;
+    min-height: 400px;
+    background: var(--gray-50);
+    border-radius: 8px;
+    overflow: auto;
+    position: relative;
+    max-width: 100%;
+}
+
+.roadmap-timeline {
+    padding: 20px;
+    min-width: 800px;
+    max-width: 100%;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--main-blue);
+    max-width: 100%;
+}
+
+.timeline-item.milestone {
+    border-left-color: var(--sprint-planning);
+}
+
+.timeline-item.sprint {
+    border-left-color: var(--sprint-review);
+}
+
+.timeline-date {
+    min-width: 100px;
+    max-width: 150px;
+    font-weight: bold;
+    color: var(--gray-900);
+    margin-right: 20px;
+}
+
+.timeline-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    max-width: calc(100% - 170px);
+}
+
+.timeline-bar {
+    flex: 1;
+    height: 30px;
+    background: var(--gray-200);
+    border-radius: 15px;
+    margin: 0 20px;
+    position: relative;
+    overflow: hidden;
+    max-width: 300px;
+    min-width: 150px;
+}
+
+.timeline-progress {
+    height: 100%;
+    border-radius: 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.timeline-progress.planeado { background: #94a3b8; }
+.timeline-progress.en-progreso { background: var(--info); }
+.timeline-progress.completado { background: var(--success); }
+.timeline-progress.atrasado { background: var(--error); }
+
+.timeline-label {
+    min-width: 150px;
+    max-width: 200px;
+    font-weight: 600;
+    color: var(--gray-900);
+}
+
+.timeline-resource {
+    min-width: 120px;
+    max-width: 150px;
+    color: var(--gray-500);
+    font-size: 0.9rem;
+}
+
+.timeline-milestone-marker {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--sprint-planning);
+    margin-right: 10px;
+}
+
+.timeline-sprint-marker {
+    width: 8px;
+    height: 20px;
+    background: var(--sprint-review);
+    margin-right: 10px;
+    border-radius: 2px;
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gray-200);
+    max-width: 100%;
+}
+
+.timeline-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    max-width: 70%;
+}
+
+.timeline-legend {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    max-width: 30%;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
+    color: var(--gray-500);
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+}
+
+.legend-color.planeado { background: #94a3b8; }
+.legend-color.en-progreso { background: var(--info); }
+.legend-color.completado { background: var(--success); }
+.legend-color.atrasado { background: var(--error); }
+.legend-color.milestone { background: var(--sprint-planning); }
+.legend-color.sprint { background: var(--sprint-review); }
+
+/* ============================================= */
+/* COMPONENTES ESPECÍFICOS DE DoR Y DoD */
+/* ============================================= */
+.dor-summary,
+.dod-summary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 20px;
+    background: var(--gray-50);
+    border-radius: 12px;
+    border: 1px solid var(--gray-200);
+    max-width: 100%;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--gray-200);
+    max-width: 100%;
+}
+
+.summary-label {
+    font-weight: 600;
+    color: var(--gray-900);
+    max-width: 70%;
+}
+
+.summary-value {
+    font-weight: 700;
+    font-size: 1.1rem;
+    max-width: 30%;
+}
+
+#dor-status,
+#dod-status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    background: var(--error);
+    color: var(--white);
+    max-width: 120px;
+}
+
+#dor-status.ready,
+#dod-status.done {
+    background: var(--success);
+}
+
+#dod-status.partial {
+    background: var(--warning);
+}
+
+/* ============================================= */
+/* MEDIA QUERIES - DISEÑO RESPONSIVE */
+/* ============================================= */
+@media (max-width: 768px) {
+    /* Header y Hero */
+    .hero-container h1 {
+        font-size: 5rem;
+    }
+    
+    .hero-description {
+        font-size: 1.2rem;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    /* Carrusel */
+    .card {
+        width: 320px;
+        min-width: 320px;
+        height: 420px;
+        margin: 15px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .card-icon {
+        width: 80px;
+        height: 80px;
+        right: 20px;
+        top: 50%;
+    }
+    
+    .material-icons {
+        font-size: 35px;
+    }
+    
+    .card-description {
+        padding-right: 80px;
+        font-size: 0.9rem;
+    }
+    
+    .card-title {
+        font-size: 1.6rem;
+        top: 15px;
+        left: 15px;
+    }
+    
+    /* Plantillas */
+    .template-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+    
+    .template-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2.2rem;
+    }
+    
+    .template-title {
+        font-size: 1.8rem;
+    }
+    
+    .template-content {
+        padding: 25px;
+    }
+    
+    /* Botones */
+    .btn-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .datetime-input {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .icon-btn::after {
+        bottom: auto;
+        top: -35px;
+    }
+    
+    /* Límites de ancho en móviles */
+    .form-item input,
+    .form-item textarea,
+    .form-item select,
+    table input,
+    table textarea,
+    table select {
+        max-width: 100%;
+        min-height: auto;
+    }
+    
+    /* Tablas en móvil - layout vertical */
+    table {
+        table-layout: auto;
+    }
+    
+    th, td {
+        display: block;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    th {
+        background-color: var(--gray-200);
+    }
+    
+    /* Roadmap Responsive */
+    .roadmap-timeline {
+        min-width: 100%;
+        padding: 10px;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .timeline-date {
+        margin-right: 0;
+        margin-bottom: 5px;
+        max-width: 100%;
+    }
+    
+    .timeline-content {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .timeline-bar {
+        width: 100%;
+        margin: 10px 0;
+        max-width: 100%;
+    }
+    
+    .timeline-legend {
+        flex-direction: column;
+        gap: 5px;
+        max-width: 100%;
+    }
+    
+    /* DoR y DoD Responsive */
+    .dor-summary,
+    .dod-summary {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .summary-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .summary-label,
+    .summary-value {
+        max-width: 100%;
+    }
+    
+    /* Notificaciones en móvil */
+    .notification {
+        max-width: 90%;
+        right: 5%;
+        left: 5%;
+    }
+}
+
+/* ============================================= */
+/* UTILIDADES Y CLASES AUXILIARES */
+/* ============================================= */
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    opacity: 0.8;
+    max-width: 100%;
+}
+
+/* ============================================= */
+/* ESTILOS ESPECÍFICOS PARA EXPANSIÓN VERTICAL */
+/* ============================================= */
+
+/* Campos que deben expandirse verticalmente */
+.expand-vertical {
+    max-width: 100%;
+    min-height: 60px;
+    resize: vertical;
+    overflow-y: auto;
+}
+
+/* Textareas con expansión vertical forzada */
+.vertical-expand {
+    max-width: 100%;
+    min-height: 120px;
+    resize: vertical;
+    overflow-y: auto;
+    line-height: 1.6;
+}
+
+/* Campos en tablas con expansión vertical */
+.table-textarea {
+    max-width: 100%;
+    min-height: 80px;
+    resize: vertical;
+    overflow-y: auto;
+}
+
+/* Límites específicos para diferentes tipos de tablas */
+#daily-table td textarea {
+    max-width: 100%;
+    min-height: 100px;
+    resize: vertical;
+}
+
+#planning-table td textarea {
+    max-width: 100%;
+    min-height: 80px;
+    resize: vertical;
+}
+
+#review-table td textarea {
+    max-width: 100%;
+    min-height: 60px;
+    resize: vertical;
+}
+
+/* Campos de descripción larga */
+.long-description {
+    max-width: 100%;
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Campos de observaciones */
+.observations-field {
+    max-width: 100%;
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Campos de criterios de aceptación */
+.acceptance-criteria {
+    max-width: 100%;
+    min-height: 120px;
+    resize: vertical;
+}
